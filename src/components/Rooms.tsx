@@ -5,7 +5,8 @@ const rooms = [
     id: 1,
     name: 'Ocean View Apartment (1 Bed)',
     description: 'Spacious apartment featuring a separate bedroom, fully equipped kitchenette, and a private balcony overlooking the ocean. Perfect for extended stays.',
-    image: '../../../media/13.jpg', 
+    // 🔴 FIX: Added '/media/Rooms/' (Capital R) and removed '../'
+    image: '/media/Rooms/13.jpg', 
     capacity: '2 guests',
     features: ['Ocean View', 'Full Kitchenette', 'King Bed', 'Balcony Access']
   },
@@ -13,7 +14,8 @@ const rooms = [
     id: 2,
     name: 'Garden View Apartment (1 Bed)',
     description: 'Enjoy the lush tropical gardens from this serene apartment. Ideal for relaxation with a separate living area and comfortable queen bed.',
-    image: '../../../media/14.jpg', 
+    // 🔴 FIX: Added '/media/Rooms/'
+    image: '/media/Rooms/14.jpg', 
     capacity: '2 guests',
     features: ['Garden View', 'Quiet Zone', 'Queen Bed', 'Separate Living Area']
   },
@@ -21,7 +23,8 @@ const rooms = [
     id: 3,
     name: 'Standard Ocean View Room',
     description: 'Spacious room featuring a comfortable king bed and a private balcony overlooking the ocean. Perfect for couples.',
-    image: '../../../media/15.jpg', 
+    // 🔴 FIX: Added '/media/Rooms/'
+    image: '/media/Rooms/15.jpg', 
     capacity: '2 guests',
     features: ['Ocean View', 'Full Kitchenette', 'King Bed', 'Private Balcony']
   },
@@ -29,7 +32,8 @@ const rooms = [
     id: 4,
     name: 'Standard Garden View Room',
     description: 'Enjoy the lush tropical gardens from this serene room. Ideal for relaxation with a comfortable queen bed.',
-    image: '../../../media/16.jpg',
+    // 🔴 FIX: Added '/media/Rooms/'
+    image: '/media/Rooms/16.jpg',
     capacity: '2 guests',
     features: ['Garden View', 'Quiet Zone', 'Queen Bed', 'Separate Living Area']
   },
@@ -37,7 +41,8 @@ const rooms = [
     id: 5,
     name: 'Ocean View Apartment (2 Bed)',
     description: 'Spacious two-bedroom apartment featuring fully equipped kitchenette and a private balcony overlooking the ocean. Perfect for families.',
-    image: '../../../media/17.jpg',
+    // 🔴 FIX: Added '/media/Rooms/'
+    image: '/media/Rooms/17.jpg',
     capacity: '4 guests',
     features: ['Ocean View', 'Full Kitchenette', 'King Bed', 'Private Balcony']
   },
@@ -45,7 +50,8 @@ const rooms = [
     id: 6,
     name: 'Ocean View Apartment (3 Bed)',
     description: 'Luxurious three-bedroom apartment with stunning ocean views. Perfect for large families or groups seeking space and comfort.',
-    image: '../../../media/18.jpg',
+    // 🔴 FIX: Added '/media/Rooms/'
+    image: '/media/Rooms/18.jpg',
     capacity: '2-6 guests',
     features: ['Ocean View', 'Full Kitchen', 'Multiple Bedrooms', 'Large Living Area']
   },
@@ -53,7 +59,8 @@ const rooms = [
     id: 7,
     name: 'Ocean View Apartment (4 Bed)',
     description: 'Premium four-bedroom apartment featuring a fully equipped kitchen and private balcony overlooking the ocean. Ideal for large groups.',
-    image: '../../../media/19.jpg', 
+    // 🔴 FIX: Added '/media/Rooms/'
+    image: '/media/Rooms/19.jpg', 
     capacity: '2-8 guests',
     features: ['Ocean View', 'Full Kitchen', 'Multiple Bathrooms', 'Private Balcony']
   },
@@ -61,7 +68,8 @@ const rooms = [
     id: 8,
     name: 'Ocean View Penthouse (5 Bed)',
     description: 'Spectacular five-bedroom penthouse with panoramic ocean views. The ultimate luxury for large families or groups.',
-    image: '../../../media/20.jpg',
+    // 🔴 FIX: Added '/media/Rooms/'
+    image: '/media/Rooms/20.jpg',
     capacity: '2-10 guests',
     features: ['Panoramic Ocean View', 'Full Kitchen', 'Multiple Living Areas', 'Premium Amenities']
   }
@@ -101,7 +109,7 @@ export default function Rooms() {
                   alt={room.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute top-4 right-4 bg-[#FFD166] text-gray-900 px-4 py-1 rounded-full text-sm font-semibold">
+                <div className="absolute top-4 right-4 bg-golden-pollen text-gray-900 px-4 py-1 rounded-full text-sm font-semibold">
                   {room.capacity}
                 </div>
               </div>
@@ -118,7 +126,7 @@ export default function Rooms() {
                     </span>
                   ))}
                 </div>
-                <button className="w-full bg-blaze-orange text-white py-3 rounded-full font-semibold hover:bg-[#29BF12] transition-colors duration-300">
+                <button className="w-full bg-blaze-orange text-white py-3 rounded-full font-semibold hover:bg-bright-fern transition-colors duration-300">
                   Check Availability
                 </button>
               </div>
@@ -131,8 +139,8 @@ export default function Rooms() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {amenities.map((amenity, idx) => (
               <div key={idx} className="flex flex-col items-center text-center group">
-                <div className="bg-laser-blue/10 p-4 rounded-full mb-3 group-hover:bg-[#29BF12]/20 transition-colors">
-                  <amenity.icon className="w-8 h-8 text-laser-blue group-hover:text-[#29BF12] transition-colors" />
+                <div className="bg-laser-blue/10 p-4 rounded-full mb-3 group-hover:bg-bright-fern/20 transition-colors">
+                  <amenity.icon className="w-8 h-8 text-laser-blue group-hover:text-bright-fern transition-colors" />
                 </div>
                 <span className="text-sm font-medium text-gray-700">{amenity.label}</span>
               </div>
