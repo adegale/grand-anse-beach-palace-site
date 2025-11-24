@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+    /* Primary Action Color (CTA: Book Now) - Blaze Orange */
+    --color-primary-cta: #F56416; 
+    
+    /* Secondary Action Color (Links, hover) - Laser Blue */
+    --color-secondary-action: #2B59C3;
+    
+    /* Accent Color (Testimonial backgrounds, badges) - Golden Pollen */
+    --color-accent: #FFD166;
+    
+    /* Background/Clean Space Color - Ghost White */
+    --color-background-light: #FBFBFF;
+    
+    /* Standard dark text color */
+    --color-text-dark: #333333;
+}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
