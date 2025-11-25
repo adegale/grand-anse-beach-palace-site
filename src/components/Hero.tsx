@@ -36,10 +36,9 @@ export default function Hero() {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
           <button
-            onClick={scrollToBooking}
-            {/* FIX: Used 'bg-blaze-orange' and 'hover:bg-bright-fern' brand colors */}
-            className="bg-blaze-orange text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-bright-fern transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-          >
+  onClick={scrollToBooking}
+  className="bg-blaze-orange text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-bright-fern transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+>
             Book Your Stay
           </button>
           <button
