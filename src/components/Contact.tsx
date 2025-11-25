@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send } from 'lucide-react';
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -9,20 +9,20 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     try {
       const response = await fetch('https://formspree.io/f/meodnblb', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
-      
+
       if (response.ok) {
-        alert('Thank you for your inquiry! We\'ll get back to you within 24 hours.');
+        alert("Thank you for your inquiry! We'll get back to you within 24 hours.");
         setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
         alert('Oops! There was a problem sending your message. Please try again or call us directly.');
@@ -45,6 +45,7 @@ export default function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          {/* LEFT SIDE: CONTACT INFO */}
           <div>
             <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
@@ -55,7 +56,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
-                    <p className="text-gray-600">Grand Anse Beach, St. George's, Grenada</p>
+                    <p className="text-gray-600">Grand Anse Beach, St. George&apos;s, Grenada</p>
                   </div>
                 </div>
 
@@ -96,10 +97,16 @@ export default function Contact() {
               <div className="mt-8 pt-8 border-t border-gray-100">
                 <h4 className="font-semibold text-gray-900 mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
-                  <a href="#" className="bg-[#2B59C3] p-3 rounded-full text-white hover:bg-[#29BF12] transition-colors">
+                  <a
+                    href="#"
+                    className="bg-[#2B59C3] p-3 rounded-full text-white hover:bg-[#29BF12] transition-colors"
+                  >
                     <Facebook className="w-5 h-5" />
                   </a>
-                  <a href="#" className="bg-[#F56416] p-3 rounded-full text-white hover:bg-[#29BF12] transition-colors">
+                  <a
+                    href="#"
+                    className="bg-[#F56416] p-3 rounded-full text-white hover:bg-[#29BF12] transition-colors"
+                  >
                     <Instagram className="w-5 h-5" />
                   </a>
                 </div>
@@ -107,6 +114,7 @@ export default function Contact() {
             </div>
           </div>
 
+          {/* RIGHT SIDE: FORM */}
           <div>
             <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
@@ -187,12 +195,17 @@ export default function Contact() {
           </div>
         </div>
 
-        <div id="booking" className="bg-gradient-to-br from-[#2B59C3] via-[#2B59C3] to-[#29BF12] rounded-2xl p-8 md:p-16 text-center text-white shadow-2xl">
+        {/* BOOK DIRECT BANNER */}
+        <div
+          id="booking"
+          className="bg-gradient-to-br from-[#2B59C3] via-[#2B59C3] to-[#29BF12] rounded-2xl p-8 md:p-16 text-center text-white shadow-2xl"
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Experience Paradise?
           </h2>
           <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
-            Book your stay directly with us and enjoy exclusive perks including complimentary breakfast, beach gear, and airport transfers
+            Book your stay directly with us and enjoy exclusive perks including complimentary
+            breakfast, beach gear, and airport transfers
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button className="bg-white text-[#2B59C3] px-10 py-4 rounded-full text-lg font-bold hover:bg-[#FFD166] hover:text-gray-900 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
