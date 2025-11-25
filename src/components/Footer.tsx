@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <img 
-              src="/media/logo.png" 
+              src={`${import.meta.env.BASE_URL}media/logo.png" 
               alt="Grand Anse Beach Palace Hotel Logo" 
               className="h-16 mb-4"
             />

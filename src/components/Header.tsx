@@ -31,7 +31,7 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center">
           <img 
-            src="/media/Logo.png" 
+            src={`${import.meta.env.BASE_URL}media/logo.png" 
             alt="Grand Beach Palace" 
             className="h-12 md:h-16 w-auto"
           />

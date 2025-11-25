@@ -19,7 +19,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover"
       >
         {/* FIX: Changed to lowercase 'hero.mp4' to match your folder */}
-        <source src="/media/hero.mp4" type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}media/hero.mp4`} type="video/mp4" />
       </video>
       
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />

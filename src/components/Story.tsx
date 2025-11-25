@@ -8,7 +8,7 @@ export default function Story() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/media/hero.jpg"
+                src={`${import.meta.env.BASE_URL}media/hero.jpg"
                 alt="Grand Anse Beach Palace Hotel"
                 className="w-full h-[500px] object-cover"
               />
