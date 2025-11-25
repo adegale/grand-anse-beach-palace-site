@@ -1,12 +1,12 @@
 import { Wifi, Tv, Wind, Coffee, Waves, User } from 'lucide-react';
-
+const BASE_URL = import.meta.env.BASE_URL;
 const rooms = [
   { // Apartment, 1 Bedroom, Ocean View
     id: 1,
     name: 'Ocean View Apartment (1 Bed)',
     description: 'Spacious apartment featuring a separate bedroom, fully equipped kitchenette, and a private balcony overlooking the ocean. Perfect for extended stays.',
     // 🔴 FIX: Added 'media/' (Capital R) and removed '../'
-    image: '${import.meta.env.BASE_URL}media/13.jpg', 
+    image: `${BASE_URL}media/rooms/13.jpg`, 
     capacity: '2 guests',
     features: ['Ocean View', 'Full Kitchenette', 'King Bed', 'Balcony Access']
   },
@@ -15,7 +15,7 @@ const rooms = [
     name: 'Garden View Apartment (1 Bed)',
     description: 'Enjoy the lush tropical gardens from this serene apartment. Ideal for relaxation with a separate living area and comfortable queen bed.',
     // 🔴 FIX: Added 'media/'
-    image: '${import.meta.env.BASE_URL}media/14.jpg', 
+    image: `${BASE_URL}media/rooms/14.jpg`, 
     capacity: '2 guests',
     features: ['Garden View', 'Quiet Zone', 'Queen Bed', 'Separate Living Area']
   },
@@ -24,7 +24,7 @@ const rooms = [
     name: 'Standard Ocean View Room',
     description: 'Spacious room featuring a comfortable king bed and a private balcony overlooking the ocean. Perfect for couples.',
     // 🔴 FIX: Added 'media/'
-    image: '${import.meta.env.BASE_URL}media/15.jpg', 
+    image: `${BASE_URL}media/rooms/15.jpg`, 
     capacity: '2 guests',
     features: ['Ocean View', 'Full Kitchenette', 'King Bed', 'Private Balcony']
   },
@@ -33,7 +33,7 @@ const rooms = [
     name: 'Standard Garden View Room',
     description: 'Enjoy the lush tropical gardens from this serene room. Ideal for relaxation with a comfortable queen bed.',
     // 🔴 FIX: Added 'media/'
-    image: '${import.meta.env.BASE_URL}media/16.jpg',
+    image: `${BASE_URL}media/rooms/16.jpg`,
     capacity: '2 guests',
     features: ['Garden View', 'Quiet Zone', 'Queen Bed', 'Separate Living Area']
   },
@@ -42,7 +42,7 @@ const rooms = [
     name: 'Ocean View Apartment (2 Bed)',
     description: 'Spacious two-bedroom apartment featuring fully equipped kitchenette and a private balcony overlooking the ocean. Perfect for families.',
     // 🔴 FIX: Added 'media/'
-    image: '${import.meta.env.BASE_URL}media/17.jpg',
+    image: `${BASE_URL}media/rooms/17.jpg`,
     capacity: '4 guests',
     features: ['Ocean View', 'Full Kitchenette', 'King Bed', 'Private Balcony']
   },
@@ -51,7 +51,7 @@ const rooms = [
     name: 'Ocean View Apartment (3 Bed)',
     description: 'Luxurious three-bedroom apartment with stunning ocean views. Perfect for large families or groups seeking space and comfort.',
     // 🔴 FIX: Added 'media/'
-    image: '${import.meta.env.BASE_URL}media/18.jpg',
+    image: `${BASE_URL}media/rooms/18.jpg`,
     capacity: '2-6 guests',
     features: ['Ocean View', 'Full Kitchen', 'Multiple Bedrooms', 'Large Living Area']
   },
@@ -60,7 +60,7 @@ const rooms = [
     name: 'Ocean View Apartment (4 Bed)',
     description: 'Premium four-bedroom apartment featuring a fully equipped kitchen and private balcony overlooking the ocean. Ideal for large groups.',
     // 🔴 FIX: Added 'media/'
-    image: '${import.meta.env.BASE_URL}media/19.jpg', 
+    image: `${BASE_URL}media/rooms/19.jpg`, 
     capacity: '2-8 guests',
     features: ['Ocean View', 'Full Kitchen', 'Multiple Bathrooms', 'Private Balcony']
   },
@@ -69,7 +69,7 @@ const rooms = [
     name: 'Ocean View Penthouse (5 Bed)',
     description: 'Spectacular five-bedroom penthouse with panoramic ocean views. The ultimate luxury for large families or groups.',
     // 🔴 FIX: Added 'media/'
-    image: '${import.meta.env.BASE_URL}media/20.jpg',
+    image: `${BASE_URL}media/rooms/20.jpg`,
     capacity: '2-10 guests',
     features: ['Panoramic Ocean View', 'Full Kitchen', 'Multiple Living Areas', 'Premium Amenities']
   }
