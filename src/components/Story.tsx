@@ -8,13 +8,15 @@ export default function Story() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src={`${import.meta.env.BASE_URL}media/hero.jpg"
+                src={`${import.meta.env.BASE_URL}media/hero.jpg`}
                 alt="Grand Anse Beach Palace Hotel"
                 className="w-full h-[500px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-8 left-8 text-white">
-                <p className="text-sm font-semibold mb-2 text-[#FFD166]">GRAND ANSE, GRENADA</p>
+                <p className="text-sm font-semibold mb-2 text-[#FFD166]">
+                  GRAND ANSE, GRENADA
+                </p>
                 <p className="text-3xl font-bold">Where the Caribbean Breathes</p>
               </div>
             </div>
@@ -30,16 +32,28 @@ export default function Story() {
             </h2>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed mb-8">
               <p>
-                A <strong className="text-[#2B59C3]">family-run boutique hotel</strong> situated on the quiet northern stretch of Grenada's most beloved shoreline, Grand Anse. Rooted in an authentically Caribbean spirit, Grand Beach Palace Hotel offers a blend of simplicity, warmth, and soul that feels more like visiting family than checking into a resort.
+                A <strong className="text-[#2B59C3]">family-run boutique hotel</strong>{' '}
+                situated on the quiet northern stretch of Grenada&apos;s most beloved
+                shoreline, Grand Anse. Rooted in an authentically Caribbean spirit,
+                Grand Beach Palace Hotel offers a blend of simplicity, warmth, and soul
+                that feels more like visiting family than checking into a resort.
               </p>
               <p>
-                Situated in the heart of St. George's, our property gives guests room to breathe — spacious accommodations, gentle ocean breezes, and the kind of personal service that remembers your name, your story. Here, time slows just enough for you to rediscover the pleasure of ease.
+                Situated in the heart of St. George&apos;s, our property gives guests
+                room to breathe — spacious accommodations, gentle ocean breezes, and the
+                kind of personal service that remembers your name, your story. Here,
+                time slows just enough for you to rediscover the pleasure of ease.
               </p>
               <p>
-                Whether you're a beach lover chasing sunsets, a Caribbean enthusiast seeking inspiration steps from the sea, a family looking for comfort and convenience, or a long-stay guest wanting a home base on the island — our relaxed atmosphere and unbeatable beach access make every stay feel effortless.
+                Whether you&apos;re a beach lover chasing sunsets, a Caribbean enthusiast
+                seeking inspiration steps from the sea, a family looking for comfort and
+                convenience, or a long-stay guest wanting a home base on the island —
+                our relaxed atmosphere and unbeatable beach access make every stay feel
+                effortless.
               </p>
               <p className="font-semibold text-[#F56416] text-xl">
-                At Grand Beach Palace Hotel, the Caribbean isn't a backdrop — it's the rhythm of the entire experience.
+                At Grand Beach Palace Hotel, the Caribbean isn&apos;t a backdrop — it&apos;s
+                the rhythm of the entire experience.
               </p>
             </div>
 
