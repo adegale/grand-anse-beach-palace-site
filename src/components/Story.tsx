@@ -34,26 +34,25 @@ export default function Story() {
               <p>
                 A <strong className="text-[#2B59C3]">family-run boutique hotel</strong>{' '}
                 situated on the quiet northern stretch of Grenada&apos;s most beloved
-                shoreline, Grand Anse. Rooted in an authentically Caribbean spirit,
-                Grand Beach Palace Hotel offers a blend of simplicity, warmth, and soul
-                that feels more like visiting family than checking into a resort.
+                shoreline, Grand Anse Beach. Rooted in an authentically Caribbean vibe,
+                Grand Beach Palace Hotel makes every stay feel like a wonderful calming 
+                experience rather than a holiday.
               </p>
               <p>
-                Situated in the heart of St. George&apos;s, our property gives guests
+                Situated in the heart of St. George&apos;s, our quiet nook gives guests
                 room to breathe — spacious accommodations, gentle ocean breezes, and the
                 kind of personal service that remembers your name, your story. Here,
                 time slows just enough for you to rediscover the pleasure of ease.
               </p>
               <p>
-                Whether you&apos;re a beach lover chasing sunsets, a Caribbean enthusiast
-                seeking inspiration steps from the sea, a family looking for comfort and
-                convenience, or a long-stay guest wanting a home base on the island —
-                our relaxed atmosphere and unbeatable beach access make every stay feel
-                effortless.
+                Whether you&apos;re a beach lover loving sunsets, a Caribbean enthusiast, 
+                a couple or group looking for comfort - or a long-stay guest wanting a home 
+                base on the island, our relaxed atmosphere and unbeatable beach access make 
+                every stay feel effortless.
               </p>
               <p className="font-semibold text-[#F56416] text-xl">
                 At Grand Beach Palace Hotel, the Caribbean isn&apos;t a backdrop — it&apos;s
-                the rhythm of the entire experience.
+                the rhythm it&apos;s the experience.
               </p>
             </div>
 
