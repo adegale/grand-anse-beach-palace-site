@@ -52,7 +52,7 @@ export default function Story() {
               </p>
               <p className="font-semibold text-[#F56416] text-xl">
                 At Grand Beach Palace Hotel, the Caribbean isn&apos;t a backdrop — it&apos;s
-                the rhythm it&apos;s the experience.
+                the rhythm, it&apos;s the experience.
               </p>
             </div>
 
