@@ -62,7 +62,7 @@ export default function Amenities() {
             Book Direct & <span className="text-[#29BF12]">Make a Difference</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            When you book directly through our website, you're not only getting the best available rate—often lower than third-party sites—but you're also helping a local business grow and improve. Direct bookings allow us to invest more in the guest experience, maintain our spaces with care, and offer you personalized service from the moment you reach out.
+            When you book directly through our website, you're not only getting the best available rate - often lower than third-party sites - but you're also helping a local business in transit grow and improve. Direct bookings allow us to invest more in the guest experience, maintain our spaces with care, and offer you personalized service from the moment you reach out.
           </p>
         </div>
 
@@ -103,7 +103,7 @@ export default function Amenities() {
         <div className="mt-16 bg-gradient-to-r from-[#29BF12] via-[#2B59C3] to-[#F56416] rounded-2xl p-1">
           <div className="bg-white rounded-2xl p-8 md:p-12 text-center">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Be Part of Our Journey
+              Be Part of the Journey
             </h3>
             <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
               We're building something special on Grand Anse Beach. While we're at the beginning of our journey, what we can promise is genuine Caribbean hospitality, a beautiful beachfront location, and personalized service that only a family-run hotel can provide.

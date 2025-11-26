@@ -6,7 +6,7 @@ export default function Contact() {
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
   });
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -27,28 +27,32 @@ export default function Contact() {
       } else {
         alert('Oops! There was a problem sending your message. Please try again or call us directly.');
       }
-    } catch (error) {
-      alert('Oops! There was a problem sending your message. Please try again or call us directly.');
-    }
+    } catch {
+  alert('Oops! There was a problem sending your message. Please try again or call us directly.');
+}
+
   };
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
+        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Get in <span className="text-[#2B59C3]">Touch</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Have questions? We're here to help plan your perfect Caribbean getaway
+            Have questions? We&apos;re here to help plan your perfect Caribbean getaway.
           </p>
         </div>
 
+        {/* Contact info + form */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {/* LEFT SIDE: CONTACT INFO */}
+          {/* LEFT: Contact info */}
           <div>
             <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="bg-[#2B59C3]/10 p-3 rounded-full">
@@ -94,6 +98,7 @@ export default function Contact() {
                 </div>
               </div>
 
+              {/* Social */}
               <div className="mt-8 pt-8 border-t border-gray-100">
                 <h4 className="font-semibold text-gray-900 mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
@@ -114,7 +119,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* RIGHT SIDE: FORM */}
+          {/* RIGHT: Form */}
           <div>
             <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
@@ -195,17 +200,12 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* BOOK DIRECT BANNER */}
-        <div
-          id="booking"
-          className="bg-gradient-to-br from-[#2B59C3] via-[#2B59C3] to-[#29BF12] rounded-2xl p-8 md:p-16 text-center text-white shadow-2xl"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Experience Paradise?
-          </h2>
+        {/* Booking banner */}
+        <div className="bg-gradient-to-br from-[#2B59C3] via-[#2B59C3] to-[#29BF12] rounded-2xl p-8 md:p-16 text-center text-white shadow-2xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Experience Paradise?</h2>
           <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
             Book your stay directly with us and enjoy exclusive perks including complimentary
-            breakfast, beach gear, and airport transfers
+            breakfast, beach gear, and airport transfers.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button className="bg-white text-[#2B59C3] px-10 py-4 rounded-full text-lg font-bold hover:bg-[#FFD166] hover:text-gray-900 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
