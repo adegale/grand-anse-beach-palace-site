@@ -73,8 +73,8 @@ const rooms = [
     image: `${BASE_URL}media/rooms/20.jpg`,
     capacity: '2-10 guests',
     features: ['Panoramic Ocean View', 'Full Kitchen', 'Multiple Living Areas', 'Premium Amenities']
-  }
-]const amenities = [
+  }];
+const amenities = [
   { icon: Wifi, label: 'Free WiFi' },
   { icon: AirVent, label: 'Air Conditioning' },
   { icon: Monitor, label: 'Smart TV' },
