@@ -72,7 +72,7 @@ export default function Amenities() {
               key={idx}
               className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-[#FFD166]"
             >
-              <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${perk.color} p-4 mb-4 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${perk.color} p-4 mb-4 group-hover:scale-110 group-hover:shadow-2xl transition-all duration-300`}>
                 <perk.icon className="w-full h-full text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">{perk.title}</h3>
@@ -88,8 +88,8 @@ export default function Amenities() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {amenities.map((amenity, idx) => (
               <div key={idx} className="text-center group">
-                <div className="bg-white rounded-xl p-6 shadow-md group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
-                  <div className="bg-[#2B59C3]/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#29BF12]/20 transition-colors">
+                <div className="bg-white rounded-xl p-6 shadow-md group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-300">
+                  <div className="bg-gradient-to-br from-[#2B59C3] to-[#667eea] w-14 h-14 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 shadow-lg">
                     <amenity.icon className="w-7 h-7 text-[#2B59C3] group-hover:text-[#29BF12] transition-colors" />
                   </div>
                   <h4 className="font-bold text-gray-900 mb-2">{amenity.title}</h4>

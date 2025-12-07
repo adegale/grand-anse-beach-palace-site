@@ -46,4 +46,60 @@
       transform: translateY(0);
     }
   }
+}/* Typography improvements */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Hover effects for interactive elements */
+.button, button, a.cta {
+  transition: all 0.3s ease;
+}
+
+.button:hover, button:hover, a.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
+/* Mobile menu styles */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  nav {
+    display: none;
+  }
+  
+  nav.active {
+    display: flex;
+    flex-direction: column;
+  }
 }
