@@ -1,9 +1,10 @@
-import { Wifi, Tv, Wind, Coffee, Waves, User } from 'lucide-react';
+import {Wifi, AirVent, Monitor, Coffee, Waves, UserRound } from 'lucide-react';
+
 const BASE_URL = import.meta.env.BASE_URL;
 const rooms = [
   { // Apartment, 1 Bedroom, Ocean View
     id: 1,
-    name: 'Ocean View Apartment (1 Bed)',
+    name: 'Deluxe Ocean View Apartment (1 Bed)',
     description: 'Spacious apartment featuring a separate bedroom, fully equipped kitchenette, and a private balcony overlooking the ocean. Perfect for extended stays.',
     // 🔴 FIX: Added 'media/' (Capital R) and removed '../'
     image: `${BASE_URL}media/rooms/13.jpg`, 
@@ -73,16 +74,16 @@ const rooms = [
     capacity: '2-10 guests',
     features: ['Panoramic Ocean View', 'Full Kitchen', 'Multiple Living Areas', 'Premium Amenities']
   }
-];
-
-const amenities = [
+]const amenities = [
   { icon: Wifi, label: 'Free WiFi' },
-  { icon: Wind, label: 'Air Conditioning' },
-  { icon: Tv, label: 'Smart TV' },
+  { icon: AirVent, label: 'Air Conditioning' },
+  { icon: Monitor, label: 'Smart TV' },
   { icon: Coffee, label: 'Coffee Maker' },
   { icon: Waves, label: 'Beach Access' },
-  { icon: User, label: 'Concierge' }
+  { icon: UserRound, label: 'Concierge' }
 ];
+
+
 
 export default function Rooms() {
   return (

@@ -26,13 +26,10 @@ export default function Hero() {
       
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in leading-tight">
-          Grand Anse Beach Palace Hotel
+          Grand Anse Beach Palace
           {/* FIX: Used 'text-golden-pollen' brand color */}
-          <span className="block text-golden-pollen mt-3 text-3xl md:text-4xl lg:text-5xl font-light italic">because it's time…</span>
+          <span className="block text-golden-pollen mt-3 text-3xl md:text-4xl lg:text-5xl font-light italic">Come relax…</span>
         </h1>
-        <p className="text-lg md:text-xl mb-10 text-gray-100 max-w-2xl mx-auto leading-relaxed">
-          A family-run boutique hotel, authentically Caribbean
-        </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
           <button
@@ -52,7 +49,7 @@ export default function Hero() {
         <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full">
           {/* FIX: Used 'text-golden-pollen' brand color */}
           <span className="text-golden-pollen font-semibold text-sm md:text-base">Direct Booking Perks:</span>
-          <span className="text-xs md:text-sm">Airport Shuttle</span>
+          <span className="text-xs md:text-sm">Reduced Rate</span>
         </div>
       </div>
       
