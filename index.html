@@ -8,10 +8,30 @@
     <meta property="og:image" content="https://bolt.new/static/og_default.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
-  <script type="module" crossorigin src="/grand-anse-beach-palace-site/assets/index-EWbnPsfG.js"></script>
-  <link rel="stylesheet" crossorigin href="/grand-anse-beach-palace-site/assets/index-Desw3xwL.css">
+  <script type="module" crossorigin src="/grand-anse-beach-palace-site/assets/index-DaLiuiXh.js"></script>
+  <link rel="stylesheet" crossorigin href="/grand-anse-beach-palace-site/assets/index-CHblL_EN.css">
 </head>
   <body>
     <div id="root"></div>
-  </body>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.querySelector('nav');
+  
+  // Create mobile menu toggle button
+  const menuToggle = document.createElement('button');
+  menuToggle.classList.add('menu-toggle');
+  menuToggle.innerHTML = '☰';
+  menuToggle.setAttribute('aria-label', 'Toggle menu');
+  
+  // Insert toggle button before nav
+  if (nav && nav.parentElement) {
+    nav.parentElement.insertBefore(menuToggle, nav);
+  }
+  
+  // Toggle menu on click
+  menuToggle.addEventListener('click', function() {
+    nav.classList.toggle('active');
+  });
+});
+</script>
 </html>
