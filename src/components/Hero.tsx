@@ -9,7 +9,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-[60vh] flex items-center justify-center overflow-hidden pt-32">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden pt-32">
       {/* Video Background */}
       <video
         autoPlay
@@ -32,21 +32,21 @@ export default function Hero() {
         </h1>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-          <button
+         <button
   onClick={scrollToBooking}
-  className="bg-blaze-orange text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-bright-fern transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+  className="button button-primary"
 >
-            Book Your Stay
-          </button>
+  Book Your Stay
+</button> 
           <button
             onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-white/20 backdrop-blur-md text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-white/30 transition-all duration-300"
+            className="button button-primary"
           >
             Discover Our Story
           </button>
         </div>
         
-        <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full">
+        <div className="button button-secondary">
           {/* FIX: Used 'text-golden-pollen' brand color */}
           <span className="text-golden-pollen font-semibold text-sm md:text-base">Direct Booking Perks:</span>
           <span className="text-xs md:text-sm">Reduced Rate</span>

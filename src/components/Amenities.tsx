@@ -52,7 +52,7 @@ const amenities = [
 
 export default function Amenities() {
   return (
-    <section id="amenities" className="py-20 bg-white">
+    <section id="amenities" className="section-textured py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-block bg-[#F56416] text-white px-6 py-2 rounded-full font-semibold mb-4">
@@ -88,7 +88,7 @@ export default function Amenities() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {amenities.map((amenity, idx) => (
               <div key={idx} className="text-center group">
-                <div className="bg-white rounded-xl p-6 shadow-md group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-300">
+                <div className="card bg-white rounded-xl p-6 shadow-md group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-300">
                   <div className="bg-gradient-to-br from-[#2B59C3] to-[#667eea] w-14 h-14 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 shadow-lg">
                     <amenity.icon className="w-7 h-7 text-[#2B59C3] group-hover:text-[#29BF12] transition-colors" />
                   </div>

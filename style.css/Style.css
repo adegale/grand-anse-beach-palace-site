@@ -1,21 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root {
-    /* Primary Action Color (CTA: Book Now) - Blaze Orange */
-    --color-primary-cta: #F56416; 
-    
-    /* Secondary Action Color (Links, hover) - Laser Blue */
-    --color-secondary-action: #2B59C3;
-    
-    /* Accent Color (Testimonial backgrounds, badges) - Golden Pollen */
-    --color-accent: #FFD166;
-    
-    /* Background/Clean Space Color - Ghost White */
-    --color-background-light: #FBFBFF;
-    
-    /* Standard dark text color */
-    --color-text-dark: #333333;
+::root {
+  /* Keep your existing colors */
+  --color-primary-cta: #F56416;
+  --color-secondary-action: #2B59C3;
+  --color-accent: #FFD166;
+  --color-background-light: #FBFBFF;
+  --color-text-dark: #333333;
+  
+  /* Add elegant neutrals */
+  --color-gray-50: #FAFAFA;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #E8E8E8;
+  --color-gray-300: #D4D4D4;
+  --color-gray-600: #757575;
+  --color-gray-900: #1A1A1A;
+  
+  /* Elegant spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
 }
 @layer base {
   html {
@@ -102,4 +109,19 @@ a {
     display: flex;
     flex-direction: column;
   }
+}
+/* Subtle background texture for sections */
+.section-textured {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Alternating section backgrounds */
+section:nth-child(even) {
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+}
+
+section:nth-child(odd) {
+  background: #ffffff;
 }
