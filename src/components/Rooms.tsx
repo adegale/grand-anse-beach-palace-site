@@ -102,7 +102,7 @@ export default function Rooms() {
           {rooms.map((room) => (
             <div
               key={room.id}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              className="card room-card group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
             >
               <div className="relative h-64 overflow-hidden">
               <img

@@ -37,11 +37,10 @@ export default function Hero() {
   className="button button-primary"
 >
   Book Your Stay
-</button> 
-          <button
-            onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
-            className="button button-primary"
-          >
+<button
+  onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
+  className="button button-secondary"
+></button>
             Discover Our Story
           </button>
         </div>
