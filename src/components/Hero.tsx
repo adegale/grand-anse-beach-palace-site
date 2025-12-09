@@ -9,14 +9,14 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden pt-32">
+    <section className="relative h-[60vh] md:h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-32">
       {/* Video Background */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-contain md:object-cover object-center"
+     className="absolute inset-0 w-full h-full object-cover object-center" 
       >
         {/* FIX: Changed to lowercase 'hero.mp4' to match your folder */}
         <source src={`${import.meta.env.BASE_URL}media/hero.mp4`} type="video/mp4" />
