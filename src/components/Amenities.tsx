@@ -89,7 +89,7 @@ export default function Amenities() {
             {amenities.map((amenity, idx) => (
               <div key={idx} className="text-center group">
                 <div className="card bg-white rounded-xl p-6 shadow-md group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-300">
-                  <div className="bg-gradient-to-br from-[#2B59C3] to-[#667eea] w-14 h-14 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 shadow-lg">
+                 <div className="bg-gradient-to-br from-[#00B4A6] to-[#2B59C3] w-14 h-14 rounded-full..."> 
                     <amenity.icon className="w-7 h-7 text-[#2B59C3] group-hover:text-[#29BF12] transition-colors" />
                   </div>
                   <h4 className="font-bold text-gray-900 mb-2">{amenity.title}</h4>
