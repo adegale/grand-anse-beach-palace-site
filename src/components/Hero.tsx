@@ -16,7 +16,7 @@ export default function Hero() {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       >
         {/* FIX: Changed to lowercase 'hero.mp4' to match your folder */}
         <source src={`${import.meta.env.BASE_URL}media/hero.mp4`} type="video/mp4" />
