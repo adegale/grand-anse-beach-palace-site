@@ -106,7 +106,7 @@ export default function Amenities() {
               Your Caribbean Journey Awaits
             </h3>
             <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-              We're building something special on Grand Anse Beach Palace. While we're at the beginning of our journey, what we can promise is genuine Caribbean hospitality, a beautiful beachfront location, and personalized service that only a family-run hotel can provide.
+            We're building something special on Grand Anse Beach Palace. While we're at the beginning of our journey, what we can promise is genuine <span className="accent-caribbean">Caribbean hospitality</span>, a beautiful beachfront location, and personalized service that only a family-run hotel can provide.
             </p>
             <button
               onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}

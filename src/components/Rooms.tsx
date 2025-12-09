@@ -91,7 +91,7 @@ export default function Rooms() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Your Perfect <span className="text-laser-blue">Caribbean</span> Escape
+            Your Pure <span className="accent-caribbean">Grenadian</span> Escape
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Spacious, comfortable rooms designed for rest and rejuvenation

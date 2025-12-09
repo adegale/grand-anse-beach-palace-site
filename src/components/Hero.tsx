@@ -30,7 +30,7 @@ export default function Hero() {
   <span className="hidden md:inline">Grand Anse </span>Beach Palace
 </h1>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+ <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">       
          <button
   onClick={scrollToBooking}
   className="button button-primary text-lg py-4 px-8 shadow-2xl">
@@ -46,7 +46,9 @@ export default function Hero() {
         
         <div className="button button-secondary">
           {/* FIX: Used 'text-golden-pollen' brand color */}
-          <span className="text-golden-pollen font-semibold text-sm md:text-base">Direct Booking Perks:</span>
+         <p className="text-xl text-[#FFD166] font-light">
+  <span className="font-semibold">Direct Booking Perks:</span> Reduced Rate
+</p> 
           <span className="text-xs md:text-sm">Reduced Rate</span>
         </div>
       </div>

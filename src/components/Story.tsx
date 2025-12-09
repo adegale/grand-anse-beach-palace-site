@@ -17,7 +17,7 @@ export default function Story() {
                 <p className="text-sm font-semibold mb-2 text-[#FFD166]">
                   GRAND ANSE, GRENADA
                 </p>
-                <p className="text-3xl font-bold">Where the Caribbean Breathes</p>
+                <p className="text-3xl font-bold">Where the <span className="accent-caribbean">Caribbean</span> Breathes</p>
               </div>
             </div>
             <div className="absolute -bottom-6 -right-6 bg-[#29BF12] text-white p-6 rounded-2xl shadow-xl hidden lg:block">
@@ -32,7 +32,7 @@ export default function Story() {
             </h2>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed mb-8">
               <p>
-                A <strong className="text-[#2B59C3]">family-run boutique hotel</strong>{' '}
+               A <strong className="text-[#00B4A6]">family-run boutique hotel</strong>
                 situated on the quiet northern stretch of Grenada&apos;s most beloved
                 shoreline, Grand Anse Beach. Rooted in an authentically Caribbean vibe,
                 Grand Beach Palace Hotel makes every stay feel like a wonderful calming 
