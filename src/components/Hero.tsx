@@ -23,7 +23,7 @@ export default function Hero() {
 <source src={`${import.meta.env.BASE_URL}media/hero.mp4`} type="video/mp4" /> 
         </video>
       
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/70"></div>
       
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 animate-fade-in leading-tight drop-shadow-2xl tracking-tight">
