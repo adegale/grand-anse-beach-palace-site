@@ -26,17 +26,17 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70"></div>
       
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in leading-tight drop-shadow-2xl">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 animate-fade-in leading-tight drop-shadow-2xl tracking-tight">
           Grand Anse Beach Palace
           {/* FIX: Used 'text-golden-pollen' brand color */}
-          <span className="block text-golden-pollen mt-3 text-3xl md:text-4xl lg:text-5xl font-light italic">Come relax…</span>
+        <span className="block text-[#FFD166] mt-3 text-2xl md:text-4xl lg:text-5xl font-light italic drop-shadow-lg">Come relax...</span>  
         </h1>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
          <button
   onClick={scrollToBooking}
-  className="button button-primary"
->
+  className="button button-primary text-lg py-4 px-8 shadow-2xl">
+
   Book Your Stay
 <button
   onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}

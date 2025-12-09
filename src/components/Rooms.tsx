@@ -98,7 +98,7 @@ export default function Rooms() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-16 px-4 md:px-0">
           {rooms.map((room) => (
             <div
               key={room.id}

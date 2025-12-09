@@ -109,8 +109,24 @@ a {
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+    /* Mobile section spacing */
+  section {
+    padding: 3rem 1rem;
   }
   
+  h2 {
+    font-size: 2rem;
+  }
+  }
+  
+  /* Mobile section spacing */
+  section {
+    padding: 3rem 1rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }  
   nav {
     display: none;
   }
@@ -142,4 +158,21 @@ section:nth-child(odd) {
 
 .bg-caribbean {
   background: linear-gradient(135deg, var(--color-tropical-teal) 0%, var(--color-secondary-action) 100%);
+}
+/* Smooth mobile entrance animation */
+@media (max-width: 768px) {
+  .card, .room-card, section > div {
+    animation: fadeSlideUp 0.6s ease-out;
+  }
+  
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
