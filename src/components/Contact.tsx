@@ -70,8 +70,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                    <p className="text-gray-600">+1 (473) 444-4444</p>
-                    <p className="text-sm text-gray-500">Available 7am - 10pm EST</p>
+                    <p className="text-gray-600">+1 (473) 439-1412</p>
+                    <p className="text-sm text-gray-500">Available 7am - 9pm EST</p>
                   </div>
                 </div>
 
@@ -204,8 +204,7 @@ export default function Contact() {
         <div className="bg-gradient-to-br from-[#2B59C3] via-[#2B59C3] to-[#29BF12] rounded-2xl p-8 md:p-16 text-center text-white shadow-2xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Experience Paradise?</h2>
           <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
-            Book your stay directly with us and enjoy exclusive perks including complimentary
-            breakfast, beach gear, and airport transfers.
+            Book your stay directly with us come, and relax. Enjoy the soothing rythms of the sea and island life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button className="bg-white text-[#2B59C3] px-10 py-4 rounded-full text-lg font-bold hover:bg-[#FFD166] hover:text-gray-900 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">

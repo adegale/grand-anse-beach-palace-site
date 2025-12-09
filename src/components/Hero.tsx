@@ -22,10 +22,10 @@ export default function Hero() {
         <source src={`${import.meta.env.BASE_URL}media/hero.mp4`} type="video/mp4" />
       </video>
       
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70"></div>
       
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in leading-tight">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in leading-tight drop-shadow-2xl">
           Grand Anse Beach Palace
           {/* FIX: Used 'text-golden-pollen' brand color */}
           <span className="block text-golden-pollen mt-3 text-3xl md:text-4xl lg:text-5xl font-light italic">Come relax…</span>

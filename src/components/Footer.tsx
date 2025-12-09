@@ -54,7 +54,7 @@ export default function Footer() {
           </h3>
           <p className="mt-4 text-sm text-slate-300 leading-relaxed">
             Booking directly helps us care for the property, create meaningful local jobs,
-            and offer our best rates—without platform fees.
+            and offer you our best rates.
           </p>
           <a
             href="#contact"

@@ -23,7 +23,12 @@
   --spacing-md: 2rem;
   --spacing-lg: 4rem;
   --spacing-xl: 6rem;
+  /* ADD THESE NEW CARIBBEAN COLORS */
+  --color-tropical-teal: #00B4A6;
+  --color-sunset-pink: #FF6B9D;
+  --color-sand: #F4E4D7;
 }
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -61,10 +66,15 @@ h1 {
   margin-bottom: 1rem;
 }
 
+/* Dramatic section headers */
 h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #1a1a1a 0%, #F56416 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
 }
 
 p {
@@ -124,4 +134,12 @@ section:nth-child(even) {
 
 section:nth-child(odd) {
   background: #ffffff;
+}
+/* Caribbean accent colors for special elements */
+.accent-caribbean {
+  color: var(--color-tropical-teal);
+}
+
+.bg-caribbean {
+  background: linear-gradient(135deg, var(--color-tropical-teal) 0%, var(--color-secondary-action) 100%);
 }

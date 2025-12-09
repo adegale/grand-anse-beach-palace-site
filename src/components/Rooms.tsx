@@ -2,7 +2,7 @@ import {Wifi, AirVent, Monitor, Coffee, Waves, UserRound } from 'lucide-react';
 
 const BASE_URL = import.meta.env.BASE_URL;
 const rooms = [
-  { // Apartment, 1 Bedroom, Ocean View
+  { // Deluxe, 1 Bedroom Apartment, Ocean View
     id: 1,
     name: 'Deluxe Ocean View Apartment (1 Bed)',
     description: 'Spacious apartment featuring a separate bedroom, fully equipped kitchenette, and a private balcony overlooking the ocean. Perfect for extended stays.',
@@ -10,15 +10,6 @@ const rooms = [
     image: `${BASE_URL}media/rooms/13.jpg`, 
     capacity: '2 guests',
     features: ['Ocean View', 'Full Kitchenette', 'King Bed', 'Balcony Access']
-  },
-  { // Apartment, 1 Bedroom, Garden View
-    id: 2,
-    name: 'Garden View Apartment (1 Bed)',
-    description: 'Enjoy the lush tropical gardens from this serene apartment. Ideal for relaxation with a separate living area and comfortable queen bed.',
-    // 🔴 FIX: Added 'media/'
-    image: `${BASE_URL}media/rooms/14.jpg`, 
-    capacity: '2 guests',
-    features: ['Garden View', 'Quiet Zone', 'Queen Bed', 'Separate Living Area']
   },
   { // Standard Room, Ocean View
     id: 3,
@@ -28,6 +19,15 @@ const rooms = [
     image: `${BASE_URL}media/rooms/15.jpg`, 
     capacity: '2 guests',
     features: ['Ocean View', 'Full Kitchenette', 'King Bed', 'Private Balcony']
+  },
+{ // Apartment, 1 Bedroom, Garden View
+    id: 2,
+    name: 'Garden View Apartment (1 Bed)',
+    description: 'Enjoy the lush tropical gardens from this serene apartment. Ideal for relaxation with a separate living area and comfortable queen bed.',
+    // 🔴 FIX: Added 'media/'
+    image: `${BASE_URL}media/rooms/14.jpg`, 
+    capacity: '2 guests',
+    features: ['Garden View', 'Quiet Zone', 'Queen Bed', 'Separate Living Area']
   },
   { // Standard Room, Mountain View - without balcony
     id: 4,
@@ -128,7 +128,7 @@ export default function Rooms() {
                     </span>
                   ))}
                 </div>
-                <button className="w-full bg-blaze-orange text-white py-3 rounded-full font-semibold hover:bg-bright-fern transition-colors duration-300">
+                <button className="w-full bg-gradient-to-r from-[#F56416] to-[#FF8A3D] text-white py-3 rounded-full font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                   Check Availability
                 </button>
               </div>

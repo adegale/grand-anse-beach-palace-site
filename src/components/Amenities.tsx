@@ -83,8 +83,8 @@ export default function Amenities() {
 
         <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12">
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            What We Offer (& What's Coming)
-          </h3>
+  What We Offer <span className="accent-caribbean">(& What's Coming)</span>
+</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {amenities.map((amenity, idx) => (
               <div key={idx} className="text-center group">
@@ -106,7 +106,7 @@ export default function Amenities() {
               Your Caribbean Journey Awaits
             </h3>
             <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-              We're building something special on Grand Anse Beach. While we're at the beginning of our journey, what we can promise is genuine Caribbean hospitality, a beautiful beachfront location, and personalized service that only a family-run hotel can provide.
+              We're building something special on Grand Anse Beach Palace. While we're at the beginning of our journey, what we can promise is genuine Caribbean hospitality, a beautiful beachfront location, and personalized service that only a family-run hotel can provide.
             </p>
             <button
               onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
