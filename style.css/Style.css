@@ -192,3 +192,20 @@ section:nth-child(odd) {
     transform: translateY(0);
   }
 }
+/* ===================================
+   Hero Text Animation - Video Sync
+   =================================== */
+
+.hero-text-animation {
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-text-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-text-visible {
+  opacity: 1;
+  pointer-events: auto;
+}

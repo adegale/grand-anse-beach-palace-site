@@ -41,7 +41,7 @@ const amenities = [
   {
     icon: Sparkles,
     title: 'Coming Soon: Restaurant',
-    description: 'Authentic Grenadian cuisine'
+    description: 'Authentic Caribbean cuisine'
   },
   {
     icon: Home,
