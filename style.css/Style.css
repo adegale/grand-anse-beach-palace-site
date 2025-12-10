@@ -209,3 +209,22 @@ section:nth-child(odd) {
   opacity: 1;
   pointer-events: auto;
 }
+/* ========================================
+   Hero Text Animation - Video Sync
+   ======================================== */
+
+.hero-text-animation {
+  animation: heroTextFadeIn 1.5s ease-out 3s forwards;
+  opacity: 0;
+}
+
+@keyframes heroTextFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
