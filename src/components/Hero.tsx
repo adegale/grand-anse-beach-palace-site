@@ -25,33 +25,27 @@ export default function Hero() {
       
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70"></div>
       
-      <div className="relative z-10 text-center ■text-white px-4 max-w-5xl mx-auto hero-text-delayed">
+      <div className="relative z-10 text-center ■text-white px-4 max-w-5xl mx-auto hero-text-delayed"></div>
            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 animate-fade-in leading-tight drop-shadow-2xl tracking-tight">
   <span className="hidden md:inline">Grand Anse </span>Beach Palace
 </h1>
-        
- <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-10">       
+   <span className="block text-[#FFD166] mt-4 text-2xl md:text-4xl lg:text-5xl font-light italic drop-shadow-lg">
+  Come relax...
+</span>     
+ <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-10 mt-8">       
 
-         <button
+<button
   onClick={scrollToBooking}
-  className="button button-primary text-lg py-4 px-8 shadow-2xl">
-
+  className="button button-primary text-lg py-4 px-10 shadow-2xl bg-gradient-to-r from-[#F56416] to-[#FF8A3D] text-white font-semibold"
+>
   Book Your Stay
 <button
   onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
-  className="button button-secondary"
+  className="button button-secondary text-lg py-4 px-10 shadow-2xl bg-white/95 backdrop-blur-sm text-gray-900 font-semibold"
 ></button>
             Discover Our Story
           </button>
         </div>
-        
-        <div className="button button-secondary">
-          {/* FIX: Used 'text-golden-pollen' brand color */}
-         <p className="text-xl text-[#FFD166] font-light">
-  <span className="font-semibold">Direct Booking Perks: </span>Reduced Rate
-</p> 
-        </div>
-      </div>
       
       <button
         onClick={() => document.getElementById('rooms')?.scrollIntoView({ behavior: 'smooth' })}
