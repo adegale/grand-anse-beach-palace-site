@@ -25,8 +25,8 @@ export default function Hero() {
       
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70"></div>
       
-      <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-       <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 animate-fade-in leading-tight drop-shadow-2xl tracking-tight">
+      <div className="relative z-10 text-center ■text-white px-4 max-w-5xl mx-auto hero-text-delayed">
+           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 animate-fade-in leading-tight drop-shadow-2xl tracking-tight">
   <span className="hidden md:inline">Grand Anse </span>Beach Palace
 </h1>
         
