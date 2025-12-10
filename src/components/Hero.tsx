@@ -1,37 +1,32 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function Hero() {
-  // Single state to control ALL text visibility
-  const [showText, setShowText] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    const handleTimeUpdate = () => {
-      const currentTime = video.currentTime;
+    const handleVideoEnd = () => {
+      // Pause video at the end
+      video.pause();
       
-      // Show text between 15 and 19 seconds (last 4 seconds of video)
-      if (currentTime >= 15 && currentTime < 19) {
-        if (!showText) setShowText(true);
-      } else {
-        if (showText) setShowText(false);
-      }
+      // Wait 5 seconds, then restart
+      setTimeout(() => {
+        video.currentTime = 0;
+        video.play();
+      }, 5000); // 5 seconds = 5000 milliseconds
     };
 
-    video.addEventListener('timeupdate', handleTimeUpdate);
-    
+    video.addEventListener('ended', handleVideoEnd);
+
     return () => {
-      video.removeEventListener('timeupdate', handleTimeUpdate);
+      video.removeEventListener('ended', handleVideoEnd);
     };
-  }, [showText]);
+  }, []);
 
   const scrollToBooking = () => {
-    const bookingSection = document.getElementById('booking');
-    if (bookingSection) {
-      bookingSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -40,7 +35,6 @@ export default function Hero() {
       <video
         ref={videoRef}
         autoPlay
-        loop
         muted
         playsInline
         className="absolute inset-0 w-full h-full object-cover object-center"
@@ -52,41 +46,43 @@ export default function Hero() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70"></div>
 
-      {/* Hero Content - ALL fades in together at end */}
-      <div className={`relative z-10 text-center text-white px-4 max-w-5xl mx-auto transition-opacity duration-1000 ${showText ? 'opacity-100' : 'opacity-0'}`}>
-        
-        {/* Heading */}
+      {/* Hero Content - Fades in near end of video */}
+      <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto hero-text-animation">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl tracking-tight">
-          <span className="hidden md:inline">Grand Anse Beach Palace</span>
+          <span className="hidden md:inline">Grand Anse </span>Beach Palace
         </h1>
-
-        {/* Subtitle */}
-        <span className="block text-[#FFD166] mt-4 text-2xl md:text-4xl lg:text-5xl font-light italic">
+        
+        <span className="block text-[#FFD166] mt-4 text-2xl md:text-4xl lg:text-5xl font-light italic drop-shadow-lg">
           Come relax...
         </span>
 
-        {/* Buttons Container */}
-        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-8 mt-8">
+        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-10 mt-8">
           <button
             onClick={scrollToBooking}
-            className="button button-primary text-lg py-4 px-10 shadow-2xl bg-gradient-to-r from-[#FF6B35] hover:from-[#FF8555]"
+            className="button button-primary text-lg py-4 px-10 shadow-2xl bg-gradient-to-r from-[#F56416] to-[#FF8A3D] text-white font-semibold"
           >
             Book Your Stay
           </button>
           
           <button
-            onClick={() => {
-              const storySection = document.getElementById('story');
-              if (storySection) {
-                storySection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-            className="button button-secondary text-lg py-4 px-10 shadow-2xl"
+            onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
+            className="button button-secondary text-lg py-4 px-10 shadow-2xl bg-white/95 backdrop-blur-sm text-gray-900 font-semibold"
           >
             Discover Our Story
           </button>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <button
+        onClick={() => document.getElementById('rooms')?.scrollIntoView({ behavior: 'smooth' })}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce"
+        aria-label="Scroll to rooms section"
+      >
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </button>
     </section>
   );
 }
