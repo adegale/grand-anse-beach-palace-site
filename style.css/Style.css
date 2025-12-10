@@ -217,7 +217,12 @@ section:nth-child(odd) {
   animation: heroTextFadeIn 1.5s ease-out 3s forwards;
   opacity: 0;
 }
-
+/* Comfortaa font for Hero section */
+.hero-text-animation h1,
+.hero-text-animation span,
+.hero-text-animation button {
+  font-family: 'Comfortaa', cursive, sans-serif;
+}
 @keyframes heroTextFadeIn {
   0% {
     opacity: 0;
