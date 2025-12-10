@@ -178,7 +178,7 @@ section:nth-child(odd) {
 }
 /* Hero text animation - appears after video plays */
 .hero-text-animation {
-  animation: heroTextFadeIn 1.5s ease-out 3s forwards;
+  animation: heroTextFadeIn 1.5s ease-out 10s forwards;
   opacity: 0;
 }
 
