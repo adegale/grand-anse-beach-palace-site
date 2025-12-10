@@ -1,64 +1,31 @@
 import { useState, useEffect, useRef } from 'react';
 
 export default function Hero() {
-  // Separate state for each text element
-  const [showHeading, setShowHeading] = useState(false);
-  const [showSubtitle, setShowSubtitle] = useState(false);
-  const [showButton, setShowButton] = useState(false);
-  
-  // Reference to access the video element
+  // Single state to control ALL text visibility
+  const [showText, setShowText] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    // TIMING CONFIGURATION
-    // Text appears 0.5 seconds after video starts
-    const headingFadeInTime = 0.5; // "Grand Anse Beach Palace" appears at 0.5s
-    const subtitleFadeInTime = 2.0; // "Come relax..." appears at 2s
-    const buttonFadeInTime = 3.5; // Button appears at 3.5s
-    
-    // How long should everything stay visible?
-    const displayDuration = 14; // Visible for 14 seconds (plenty of time)
-    
-    // When should everything disappear?
-    const fadeOutTime = headingFadeInTime + displayDuration; // Disappear at 14.5s
-
-    // This function runs constantly while video plays
     const handleTimeUpdate = () => {
       const currentTime = video.currentTime;
       
-      // Show heading first
-      if (currentTime >= headingFadeInTime && !showHeading && currentTime < fadeOutTime) {
-        setShowHeading(true);
-      }
-      
-      // Show subtitle second
-      if (currentTime >= subtitleFadeInTime && !showSubtitle && currentTime < fadeOutTime) {
-        setShowSubtitle(true);
-      }
-      
-      // Show button last
-      if (currentTime >= buttonFadeInTime && !showButton && currentTime < fadeOutTime) {
-        setShowButton(true);
-      }
-      
-      // Hide everything before loop restarts
-      if (currentTime >= fadeOutTime || currentTime < headingFadeInTime) {
-        if (showHeading) setShowHeading(false);
-        if (showSubtitle) setShowSubtitle(false);
-        if (showButton) setShowButton(false);
+      // Show text between 15 and 19 seconds (last 4 seconds of video)
+      if (currentTime >= 15 && currentTime < 19) {
+        if (!showText) setShowText(true);
+      } else {
+        if (showText) setShowText(false);
       }
     };
 
     video.addEventListener('timeupdate', handleTimeUpdate);
     
-    // Cleanup
     return () => {
       video.removeEventListener('timeupdate', handleTimeUpdate);
     };
-  }, [showHeading, showSubtitle, showButton]);
+  }, [showText]);
 
   const scrollToBooking = () => {
     const bookingSection = document.getElementById('booking');
@@ -85,26 +52,38 @@ export default function Hero() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70"></div>
 
-      {/* Hero Content - Staggered Fade-in */}
-      <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+      {/* Hero Content - ALL fades in together at end */}
+      <div className={`relative z-10 text-center text-white px-4 max-w-5xl mx-auto transition-opacity duration-1000 ${showText ? 'opacity-100' : 'opacity-0'}`}>
         
-        {/* Heading - Fades in first at 0.5s */}
-        <h1 className={`text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl tracking-tight hero-text-animation ${showHeading ? 'hero-text-visible' : 'hero-text-hidden'}`}>
+        {/* Heading */}
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl tracking-tight">
           <span className="hidden md:inline">Grand Anse Beach Palace</span>
         </h1>
 
-        {/* Subtitle - Fades in second at 2s */}
-        <span className={`block text-[#FFD166] mt-4 text-2xl md:text-4xl lg:text-5xl font-light italic hero-text-animation ${showSubtitle ? 'hero-text-visible' : 'hero-text-hidden'}`}>
+        {/* Subtitle */}
+        <span className="block text-[#FFD166] mt-4 text-2xl md:text-4xl lg:text-5xl font-light italic">
           Come relax...
         </span>
 
-        {/* Button - Fades in last at 3.5s */}
-        <div className={`flex flex-col sm:flex-row gap-8 justify-center items-center mb-8 mt-8 hero-text-animation ${showButton ? 'hero-text-visible' : 'hero-text-hidden'}`}>
+        {/* Buttons Container */}
+        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-8 mt-8">
           <button
             onClick={scrollToBooking}
             className="button button-primary text-lg py-4 px-10 shadow-2xl bg-gradient-to-r from-[#FF6B35] hover:from-[#FF8555]"
           >
             Book Your Stay
+          </button>
+          
+          <button
+            onClick={() => {
+              const storySection = document.getElementById('story');
+              if (storySection) {
+                storySection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="button button-secondary text-lg py-4 px-10 shadow-2xl"
+          >
+            Discover Our Story
           </button>
         </div>
       </div>
