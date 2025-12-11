@@ -32,13 +32,23 @@ export default function Story() {
             </h2>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed mb-8">
             <p>
-Lennie de Gale founded this family-run boutique hotel 25 years ago. For years, it was a beloved haven under his care until his lengthy illness and subsequent death. Now, we are honored to take up the torch with deep respect for the legacy he built.
-We are passionately committed to reviving and modernizing his original vision as we gently restore the hotel's spirit, ensuring it remains a place infused with authentic warmth for you to truly unwind and feel relaxed.
-Tucked away on the calm northern stretch of Grenada's iconic Grand Anse Beach, the Palace Hotel is a cherished sanctuary where comfort meets authentic character.
-Whether you're watching the sunset from your veranda, exploring island life, or settling in for an extended stay, we bring that enduring soul of the Caribbean.
-We invite you to be part of our new chapter, where a memorable and heartfelt experience awaits.</p>  
+  <p>
+  Lennie de Gale founded this <span className="text-[#00B4A6]">family-run boutique hotel</span> 25 years ago. For years, it was a beloved haven under his care. Following a period of transition during Mr. de Gale's lengthy illness, we have been honored to take up the torch with deep respect for his legacy.
+</p>
+
+<p>
+  We are passionately committed to reviving and modernizing his original vision as we gently restore the hotel's spirit. Tucked away on the calm northern stretch of Grenada's iconic Grand Anse Beach, the Beach Palace Hotel remains a place infused with <span className="text-[#00B4A6]">authentic warmth</span>—not just a place to stay, but a place to truly unwind and feel at home.
+</p>
+
+<p>
+  Whether you're watching the sunset from your veranda, exploring island life, or settling in for an extended stay, we offer room to breathe: in our spacious accommodations, in the soft ocean breezes, and through <span className="text-[#00B4A6]">personal service that remembers your name</span>. Here, time gently slows, allowing you to rediscover the joy of simply being.
+</p>
+
+<p className="font-semibold text-xl mt-6">
+  At Grand Anse Beach Palace Hotel, those who love it, love it a lot!
+</p>
               <p className="font-semibold text-[#F56416] text-xl">
-                At Grand Beach Palace Hotel, those who love it, love it a lot!
+                At Grand Anse Beach Palace Hotel, those who love it, love it a lot!
               </p>
             </div>
 
