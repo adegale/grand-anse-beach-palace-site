@@ -2,7 +2,7 @@ export default function Story() {
   return (
     <section id="story" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Image column */}
           <div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
