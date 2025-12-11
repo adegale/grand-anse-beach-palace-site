@@ -36,9 +36,7 @@ Lennie de Gale founded this family-run boutique hotel 25 years ago. For years, i
 We are passionately committed to reviving and modernizing his original vision as we gently restore the hotel's spirit, ensuring it remains a place infused with authentic warmth for you to truly unwind and feel relaxed.
 Tucked away on the calm northern stretch of Grenada's iconic Grand Anse Beach, the Palace Hotel is a cherished sanctuary where comfort meets authentic character.
 Whether you're watching the sunset from your veranda, exploring island life, or settling in for an extended stay, we bring that enduring soul of the Caribbean.
-We invite you to be part of our new chapter, where a memorable and heartfelt experience awaits.
-At Grand Beach Palace Hotel, those who love it, love it a lot!
-</p>  
+We invite you to be part of our new chapter, where a memorable and heartfelt experience awaits.</p>  
               <p className="font-semibold text-[#F56416] text-xl">
                 At Grand Beach Palace Hotel, those who love it, love it a lot!
               </p>

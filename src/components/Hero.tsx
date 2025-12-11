@@ -43,9 +43,9 @@ export default function Hero() {
 
       {/* Hero Content - Fades in after 3 seconds */}
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto hero-text-animation">
-       <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl tracking-tight mt-20 md:mt-0">
-  <span className="hidden md:inline">Grand Anse </span>Beach Palace
-</h1>
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl tracking-tight">
+          <span className="hidden md:inline">Grand Anse </span>Beach Palace
+        </h1>
         
         <span className="block text-[#FFD166] mt-4 text-2xl md:text-4xl lg:text-5xl font-light italic drop-shadow-lg">
           Come relax...
