@@ -1,30 +1,4 @@
-import { useEffect, useRef } from 'react';
-
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const handleVideoEnd = () => {
-      // Pause video at the end
-      video.pause();
-      
-      // Wait 5 seconds, then restart
-      setTimeout(() => {
-        video.currentTime = 0;
-        video.play();
-      }, 5000); // 5 seconds = 5000 milliseconds
-    };
-
-    video.addEventListener('ended', handleVideoEnd);
-
-    return () => {
-      video.removeEventListener('ended', handleVideoEnd);
-    };
-  }, []);
-
   const scrollToBooking = () => {
     document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -33,8 +7,8 @@ export default function Hero() {
     <section className="relative h-[60vh] md:h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-32">
       {/* Video Background */}
       <video
-        ref={videoRef}
         autoPlay
+        loop
         muted
         playsInline
         className="absolute inset-0 w-full h-full object-cover object-center"
@@ -46,7 +20,7 @@ export default function Hero() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70"></div>
 
-      {/* Hero Content - Fades in near end of video */}
+      {/* Hero Content - Fades in after delay */}
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto hero-text-animation">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl tracking-tight">
           <span className="hidden md:inline">Grand Anse </span>Beach Palace
