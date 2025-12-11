@@ -43,9 +43,9 @@ export default function Story() {
                 Whether you're watching the sunset from your veranda, exploring island life, or settling in for an extended stay, we offer room to breathe: in our spacious accommodations, in the soft ocean breezes, and through <span className="text-[#00B4A6]">personal service that remembers your name</span>. Here, time gently slows, allowing you to rediscover the joy of simply being.
               </p>
 
-              <p className="font-semibold text-xl mt-6">
-                At Grand Anse Beach Palace Hotel, those who love it, love it a lot!
-              </p>
+              <p className="font-semibold text-2xl mt-8 italic text-gray-900">
+  At Grand Anse Beach Palace Hotel, those who love it, <span className="text-[#F56416] font-bold">love it a lot!</span>
+</p>
             </div>
           </div>
         </div>
