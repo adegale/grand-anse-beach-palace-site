@@ -14,9 +14,7 @@ export default function Story() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div className="absolute bottom-8 left-8 text-white">
-                <p className="text-sm font-semibold mb-2 text-[#FFD166]">GRAND ANSE, GRENADA</p>
-                <p className="text-3xl font-bold">Where the Caribbean Breathes</p>
-              </div>
+                              </div>
             </div>
             <div className="absolute -bottom-6 -right-6 bg-[#29BF12] text-white p-6 rounded-2xl shadow-xl hidden lg:block">
               <p className="text-4xl font-bold">25+</p>
