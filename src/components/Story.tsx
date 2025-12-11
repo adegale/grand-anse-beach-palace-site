@@ -28,7 +28,7 @@ export default function Story() {
 
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Story: A Legacy of Warmth, Renewed with Care
+              Our Story: A Legacy Renewed with Care
             </h2>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed mb-8">
             <p>

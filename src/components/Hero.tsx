@@ -8,9 +8,14 @@ export default function Hero() {
     if (!video) return;
 
     const handleVideoEnd = () => {
+      // Pause video at the end
+      video.pause();
+      
+      // Wait 5 seconds, then restart
       setTimeout(() => {
+        video.currentTime = 0;
         video.play();
-      }, 5000); // Pause for 5 seconds at the end
+      }, 5000); // 5 seconds = 5000 milliseconds
     };
 
     video.addEventListener('ended', handleVideoEnd);
@@ -41,7 +46,7 @@ export default function Hero() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70"></div>
 
-      {/* Hero Content - Fades in after 3 seconds */}
+      {/* Hero Content - Fades in near end of video */}
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto hero-text-animation">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl tracking-tight">
           <span className="hidden md:inline">Grand Anse </span>Beach Palace
