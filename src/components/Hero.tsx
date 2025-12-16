@@ -41,7 +41,7 @@ export default function Hero() {
         muted
         playsInline
         onEnded={handleVideoEnd}
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        className="absolute inset-0 w-full h-full object-contain object-center"
       >
         <source src={`${import.meta.env.BASE_URL}media/hero-mobile.mp4`} type="video/mp4" media="(max-width: 768px)" />
         <source src={`${import.meta.env.BASE_URL}media/hero.mp4`} type="video/mp4" />
@@ -94,3 +94,4 @@ export default function Hero() {
     </section>
   );
 }
+
