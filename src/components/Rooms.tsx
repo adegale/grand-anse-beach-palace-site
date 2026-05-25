@@ -110,13 +110,19 @@ export default function Rooms() {
   return (
     <section id="rooms" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Your Pure <span className="accent-caribbean">Caribbean</span> Escape
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Spacious, comfortable rooms designed for rest and rejuvenation
-          </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <button
+            onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+            className="w-full sm:w-auto text-base md:text-lg py-3 px-8 md:py-4 md:px-10 shadow-xl bg-gradient-to-r from-[#F56416] to-[#FF8A3D] text-white font-semibold"
+          >
+            Book Your Stay
+          </button>
+          <button
+            onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
+            className="w-full sm:w-auto text-base md:text-lg py-3 px-8 md:py-4 md:px-10 border-2 border-gray-900 text-gray-900 bg-transparent font-semibold"
+          >
+            Discover Our Story
+          </button>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-16 px-4 md:px-0">
