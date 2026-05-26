@@ -171,7 +171,10 @@ export default function Rooms() {
                     </span>
                   ))}
                 </div>
-                <button className="w-full bg-gradient-to-r from-[#F56416] to-[#FF8A3D] text-white py-3 rounded-full font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <button
+                  onClick={() => document.getElementById('send-message')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="block w-full bg-gradient-to-r from-[#F56416] to-[#FF8A3D] text-white py-3 rounded-full font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center"
+                >
                   Check Availability
                 </button>
               </div>
