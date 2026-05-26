@@ -112,7 +112,7 @@ export default function Rooms() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
           <button
-            onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('send-message')?.scrollIntoView({ behavior: 'smooth' })}
             className="w-full sm:w-auto text-base md:text-lg py-3 px-8 md:py-4 md:px-10 shadow-xl bg-gradient-to-r from-[#F56416] to-[#FF8A3D] text-white font-semibold"
           >
             Book Your Stay

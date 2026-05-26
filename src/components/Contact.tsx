@@ -121,7 +121,7 @@ export default function Contact() {
 
           {/* RIGHT: Form */}
           <div>
-            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg">
+            <form id="send-message" onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
 
               <div className="space-y-5">
@@ -207,7 +207,10 @@ export default function Contact() {
             Book your stay directly with us come, and relax. Enjoy the soothing rythms of the sea and island life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-[#2B59C3] px-10 py-4 rounded-full text-lg font-bold hover:bg-[#FFD166] hover:text-gray-900 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
+            <button
+              onClick={() => document.getElementById('send-message')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-white text-[#2B59C3] px-10 py-4 rounded-full text-lg font-bold hover:bg-[#FFD166] hover:text-gray-900 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
+            >
               Check Availability
             </button>
             <button className="bg-[#F56416] text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-[#F56416] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
