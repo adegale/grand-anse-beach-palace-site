@@ -7,5 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/grand-anse-beach-palace-site/'
+  base: '/'
 });
