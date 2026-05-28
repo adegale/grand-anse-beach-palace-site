@@ -214,7 +214,7 @@ export default function Contact() {
               Check Availability
             </button>
             <button className="bg-[#F56416] text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-[#F56416] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
-              Call Now: +1 (473) 444-4444
+              Call Now: +1 (473) 439-1412
             </button>
           </div>
           <p className="mt-8 text-sm opacity-75">
