@@ -217,7 +217,7 @@ export default function Contact() {
         <div className="bg-gradient-to-br from-[#2B59C3] via-[#2B59C3] to-[#29BF12] rounded-2xl p-8 md:p-16 text-center text-white shadow-2xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Experience Paradise?</h2>
           <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
-            Book your stay directly with us come, and relax. Enjoy the soothing rythms of the sea and island life.
+            Book your stay directly with us, come and relax. Enjoy the soothing rhythms of the sea and island life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
