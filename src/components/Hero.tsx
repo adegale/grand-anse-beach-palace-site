@@ -44,7 +44,7 @@ export default function Hero() {
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
 
-            {/* Hero text - always visible */}
+            {/* Hero text */}
             <div className="relative z-10 text-center px-4 w-full">
                 <span
                     className={`block text-[#FFD166] text-6xl md:text-8xl lg:text-9xl font-light italic drop-shadow-2xl
@@ -52,8 +52,11 @@ export default function Hero() {
                 >
                     Come relax...
                 </span>
-                <p className="block text-white text-lg md:text-2xl lg:text-3xl font-light mt-6 drop-shadow-lg tracking-wide">
-                    Grand Anse Beach Palace &mdash; family-run, fully appointed, unforgettable.
+                <p
+                    className={`block text-[#FFD166] text-2xl md:text-4xl lg:text-5xl font-light italic drop-shadow-2xl mt-4
+                    transition-opacity duration-1000 ${showText ? 'opacity-100' : 'opacity-0'}`}
+                >
+                    Grand Anse Beach Palace &mdash; family-run, fun, unforgettable.
                 </p>
             </div>
         </section>
