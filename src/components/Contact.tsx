@@ -116,6 +116,19 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
+                            {/* Google Map */}
+              <div className="mt-8 rounded-xl overflow-hidden shadow-md">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.52!2d-61.7735!3d12.0075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c3e6fbbca5afe93%3A0xb9e3b21d0ae73a65!2sGrand%20Anse%20Beach%2C%20St.%20George%27s%2C%20Grenada!5e0!3m2!1sen!2sus!4v1717100000000!5m2!1sen!2sus"
+                  width="100%"
+                  height="280"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Grand Anse Beach Palace Location"
+                />
+              </div>
             </div>
           </div>
 
