@@ -1,4 +1,5 @@
-import { Sun, Users, DollarSign, MapPin, Sparkles, Wind, Home, Sunset } from 'lucide-react';
+import { DollarSign, Users, Sunset, MapPin } from 'lucide-react';
+
 
 const perks = [
   {
@@ -29,25 +30,25 @@ const perks = [
 
 const amenities = [
   {
-    icon: Wind,
+    image: 'https://adegale.github.io/Anichi_Website/air_conditioning.png',
     title: 'Air Conditioning',
-    description: 'Cool, comfortable rooms'
+    description: 'Cool, comfortable rooms',
   },
   {
-    icon: Sun,
+    image: 'https://adegale.github.io/Anichi_Website/beachfront.png',
     title: 'Beachfront Location',
-    description: 'Steps from Grand Anse Beach'
+    description: 'Steps from Grand Anse Beach',
   },
   {
-    icon: Sparkles,
+    image: 'https://adegale.github.io/Anichi_Website/breakfast.png',
     title: 'Coming Soon: Restaurant',
-    description: 'Authentic Caribbean cuisine'
+    description: 'Authentic Caribbean cuisine',
   },
   {
-    icon: Home,
+    image: 'https://adegale.github.io/Anichi_Website/location.png',
     title: 'Coming Soon: Botanical Garden',
-    description: 'Peaceful walking paths'
-  }
+    description: 'Peaceful walking paths',
+  },
 ];
 
 export default function Amenities() {
@@ -81,39 +82,20 @@ export default function Amenities() {
           ))}
         </div>
 
-        <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12">
+        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100">
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-  What We Offer <span className="accent-caribbean">(& What's Coming)</span>
-</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            What We Offer <span className="text-[#F56416]">(&amp; What&apos;s Coming)</span>
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {amenities.map((amenity, idx) => (
-              <div key={idx} className="text-center group">
-                <div className="card bg-white rounded-xl p-6 shadow-md group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-300">
-                 <div className="bg-gradient-to-br from-[#00B4A6] to-[#2B59C3] w-14 h-14 rounded-full..."> 
-                    <amenity.icon className="w-7 h-7 text-[#2B59C3] group-hover:text-[#29BF12] transition-colors" />
-                  </div>
-                  <h4 className="font-bold text-gray-900 mb-2">{amenity.title}</h4>
-                  <p className="text-sm text-gray-600">{amenity.description}</p>
+              <div key={idx} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow">
+                <div className="w-24 h-24 mx-auto mb-4">
+                  <img src={amenity.image} alt={amenity.title} className="w-full h-full object-contain" />
                 </div>
+                <h4 className="font-bold text-gray-900 mb-2">{amenity.title}</h4>
+                <p className="text-gray-600 text-sm">{amenity.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-
-        <div className="mt-16 bg-gradient-to-r from-[#29BF12] via-[#2B59C3] to-[#F56416] rounded-2xl p-1">
-          <div className="bg-white rounded-2xl p-8 md:p-12 text-center">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Your Caribbean Journey Awaits
-            </h3>
-            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-            We're building something special on Grand Anse Beach Palace. While we're at the beginning of our journey, what we can promise is genuine <span className="accent-caribbean">Caribbean hospitality</span>, a beautiful beachfront location, and personalized service that only a family-run hotel can provide.
-            </p>
-            <button
-              onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-[#F56416] text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-[#29BF12] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              Reserve Your Stay Today
-            </button>
           </div>
         </div>
       </div>
