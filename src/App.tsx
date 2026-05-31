@@ -5,6 +5,7 @@ import Story from './components/Story';
 import ExploreGrenada from './components/ExploreGrenada';
 import Testimonials from './components/Testimonials';
 import Amenities from './components/Amenities';
+import SecurityDeposit from './components/SecurityDeposit';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -18,6 +19,7 @@ function App() {
       <ExploreGrenada />
       <Testimonials />
       <Amenities />
+      <SecurityDeposit />
       <Contact />
       <Footer />
     </div>
