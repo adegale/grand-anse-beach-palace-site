@@ -173,6 +173,12 @@ export default function Rooms() {
                 </div>
                 <button
                   onClick={() => document.getElementById('send-message')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="w-full bg-[#F56416] text-white py-3 rounded-lg hover:bg-[#d4521a] transition font-semibold mb-3"
+                >
+                  Book This Room
+                </button>
+                <button
+                  onClick={() => document.getElementById('send-message')?.scrollIntoView({ behavior: 'smooth' })}
                   className="block w-full bg-gradient-to-r from-[#F56416] to-[#FF8A3D] text-white py-3 rounded-full font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center"
                 >
                   Check Availability
@@ -191,7 +197,16 @@ export default function Rooms() {
             aria-modal="true"
           >
             <div className="relative w-full max-w-4xl">
-              <button
+              
+
+        <div className="text-center mt-12">
+          <button
+            onClick={() => document.getElementById('send-message')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-[#F56416] text-white px-10 py-4 rounded-lg hover:bg-[#d4521a] transition font-semibold text-lg shadow-lg"
+          >
+            View All Rooms &amp; Check Availability
+          </button>
+        </div><button
                 onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
                 className="absolute top-3 right-3 text-white bg-black/40 rounded-full p-2"
                 aria-label="Close gallery"
