@@ -2,6 +2,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Rooms from './components/Rooms';
 import Story from './components/Story';
+import ExploreGrenada from './components/ExploreGrenada';
 import Testimonials from './components/Testimonials';
 import Amenities from './components/Amenities';
 import Contact from './components/Contact';
@@ -14,6 +15,7 @@ function App() {
       <Hero />
       <Rooms />
       <Story />
+      <ExploreGrenada />
       <Testimonials />
       <Amenities />
       <Contact />
