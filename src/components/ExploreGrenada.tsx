@@ -20,7 +20,7 @@ const attractions = [
     distance: '15 min drive',
     description:
       'Discover a unique underwater art gallery featuring over 65 sculptures submerged in Molinere Bay. Perfect for snorkeling and diving enthusiasts.',
-    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80',
+    image: '/media/attractions/underwater-sculpture-park.jpg',
     alt: 'Diver exploring underwater sculptures',
   },
   {
@@ -44,7 +44,7 @@ const attractions = [
     distance: '10 min drive',
     description:
       "Immerse yourself in the aromatic world of Grenada's famous spices. Shop for nutmeg, cinnamon, and local crafts at the vibrant St. George's market.",
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80',
+    image: '/media/attractions/spice-market.jpg',
     alt: 'Grenada spice market nutmeg and cinnamon',
   },
 ];
