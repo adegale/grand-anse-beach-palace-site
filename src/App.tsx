@@ -8,6 +8,7 @@ import Amenities from './components/Amenities';
 import SecurityDeposit from './components/SecurityDeposit';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <SecurityDeposit />
       <Contact />
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }

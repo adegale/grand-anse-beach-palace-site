@@ -103,13 +103,19 @@ export default function Contact() {
                 <h4 className="font-semibold text-gray-900 mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://www.facebook.com/grandansebeachpalace/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Grand Anse Beach Palace on Facebook"
                     className="bg-[#2B59C3] p-3 rounded-full text-white hover:bg-[#29BF12] transition-colors"
                   >
                     <Facebook className="w-5 h-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/grandansebeachpalace/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Grand Anse Beach Palace on Instagram"
                     className="bg-[#F56416] p-3 rounded-full text-white hover:bg-[#29BF12] transition-colors"
                   >
                     <Instagram className="w-5 h-5" />
@@ -150,7 +156,6 @@ export default function Contact() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#2B59C3] focus:outline-none transition-colors"
-                    placeholder="John Doe"
                   />
                 </div>
 
@@ -166,7 +171,6 @@ export default function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#2B59C3] focus:outline-none transition-colors"
-                    placeholder="john@example.com"
                   />
                 </div>
 
@@ -181,7 +185,6 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#2B59C3] focus:outline-none transition-colors"
-                    placeholder="+1 (555) 000-0000"
                   />
                 </div>
 
