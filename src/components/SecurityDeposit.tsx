@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ShieldCheck, ChevronDown, ChevronUp, CreditCard, Clock, AlertTriangle, RotateCcw } from 'lucide-react';
+import { ShieldCheck, ChevronDown, ChevronUp, CreditCard, Clock3, ReceiptText } from 'lucide-react';
 
 const highlights = [
   {
@@ -13,12 +13,12 @@ const highlights = [
     desc: 'Your deposit is fully refunded if the room is left in satisfactory condition with no unpaid charges.',
   },
   {
-    icon: Clock,
+    icon: Clock3,
     title: 'Refunded Within 7–10 Days',
     desc: 'Refunds are processed within 7–10 business days after check-out and room inspection.',
   },
   {
-    icon: AlertTriangle,
+    icon: ReceiptText,
     title: 'Keep Your Receipt',
     desc: 'Cash deposit recipients must present their check-in receipt at check-out to receive their cash refund.',
   },
@@ -103,7 +103,7 @@ C. Guest Responsibility: Guests are responsible for reviewing the current policy
   },
 ];
 
-function AccordionItem({ section, index }: { section: typeof sections[0]; index: number }) {
+function AccordionItem({ section }: { section: typeof sections[0] }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="border border-gray-200 rounded-xl overflow-hidden">
@@ -152,11 +152,20 @@ export default function SecurityDeposit() {
           {highlights.map((h, i) => {
             const Icon = h.icon;
             return (
-              <div key={i} className="bg-ghost-white rounded-2xl p-6 text-center border border-gray-100 shadow-sm">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blaze-orange/10 mb-4">
-                  <Icon className="w-6 h-6 text-blaze-orange" />
+              <div
+                key={i}
+                className="group relative overflow-hidden rounded-2xl border border-blaze-orange/15 bg-gradient-to-br from-white via-ghost-white to-golden-pollen/20 p-6 text-center shadow-[0_14px_34px_rgba(51,51,51,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-blaze-orange/30 hover:shadow-[0_18px_42px_rgba(51,51,51,0.12)]"
+              >
+                <div className="mb-5 flex items-center justify-between">
+                  <span className="text-xs font-bold tracking-[0.18em] text-blaze-orange/70">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="ml-3 h-px flex-1 bg-gradient-to-r from-blaze-orange/20 to-transparent" />
                 </div>
-                <h3 className="font-semibold text-dark-text mb-2 text-sm">{h.title}</h3>
+                <div className="mx-auto mb-5 inline-flex h-16 w-16 items-center justify-center rounded-full border border-blaze-orange/20 bg-blaze-orange/10 shadow-inner shadow-white">
+                  <Icon className="w-8 h-8 text-blaze-orange" />
+                </div>
+                <h3 className="font-semibold text-dark-text mb-2 text-sm md:text-base">{h.title}</h3>
                 <p className="text-gray-500 text-xs leading-relaxed">{h.desc}</p>
               </div>
             );
@@ -167,10 +176,9 @@ export default function SecurityDeposit() {
         <div className="text-center mb-6">
           <button
             onClick={() => setShowFull(!showFull)}
-            className="inline-flex items-center gap-2 text-blaze-orange font-semibold hover:underline text-sm transition-colors"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-blaze-orange px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blaze-orange/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blaze-orange/90 hover:shadow-xl hover:shadow-blaze-orange/30 focus:outline-none focus:ring-2 focus:ring-blaze-orange focus:ring-offset-2"
           >
-            <RotateCcw className="w-4 h-4" />
-            {showFull ? 'Hide Full Policy' : 'View Full Security Deposit Policy'}
+            {showFull ? 'Hide Full Policy' : 'Read the Full Deposit Policy'}
             {showFull ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
           </button>
         </div>
@@ -179,7 +187,7 @@ export default function SecurityDeposit() {
         {showFull && (
           <div className="space-y-3">
             {sections.map((section, i) => (
-              <AccordionItem key={i} section={section} index={i} />
+              <AccordionItem key={i} section={section} />
             ))}
             <p className="text-xs text-gray-400 text-center pt-4">
               Last reviewed: 2025 · Grand Anse Beach Palace Hotel
