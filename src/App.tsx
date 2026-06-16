@@ -12,7 +12,7 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   return (
-    <div className="min-h-screen bg-ghost-white text-dark-text">
+    <div className="min-h-screen bg-white text-palace-navy">
       <Header />
       <Hero />
       <Rooms />

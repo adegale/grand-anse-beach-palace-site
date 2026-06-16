@@ -106,22 +106,29 @@ C. Guest Responsibility: Guests are responsible for reviewing the current policy
 function AccordionItem({ section }: { section: typeof sections[0] }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border border-gray-200 rounded-xl overflow-hidden">
+    <div className="border border-gray-200 overflow-hidden">
       <button
-        className="w-full flex items-center justify-between px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors"
+        className="w-full flex items-center justify-between px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors duration-200"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
       >
-        <span className="font-semibold text-dark-text text-sm md:text-base">{section.title}</span>
+        <span
+          className="font-semibold text-palace-navy text-sm md:text-base"
+          style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+        >
+          {section.title}
+        </span>
         {open ? (
-          <ChevronUp className="w-5 h-5 text-blaze-orange flex-shrink-0 ml-2" />
+          <ChevronUp className="w-4 h-4 text-palace-gold flex-shrink-0 ml-2" />
         ) : (
-          <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0 ml-2" />
+          <ChevronDown className="w-4 h-4 text-gray-400 flex-shrink-0 ml-2" />
         )}
       </button>
       {open && (
         <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-          <p className="text-gray-600 text-sm whitespace-pre-line leading-relaxed">{section.content}</p>
+          <p className="text-gray-600 text-sm whitespace-pre-line leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            {section.content}
+          </p>
         </div>
       )}
     </div>
@@ -132,17 +139,18 @@ export default function SecurityDeposit() {
   const [showFull, setShowFull] = useState(false);
 
   return (
-    <section id="security-deposit" className="py-20 bg-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="security-deposit" className="py-24 bg-white">
+      <div className="max-w-5xl mx-auto px-6">
 
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-blaze-orange/10 text-blaze-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">
+        <div className="mb-12">
+          <div className="section-rule" />
+          <div className="inline-flex items-center gap-2 border border-palace-navy/20 text-palace-navy px-4 py-2 text-xs font-semibold tracking-widest uppercase mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
             <ShieldCheck className="w-4 h-4" />
             Guest Protection
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-text mb-4">Security Deposit Policy</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-palace-navy mb-4">Security Deposit Policy</h2>
+          <p className="text-gray-600 max-w-2xl" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
             We collect a fully refundable security deposit at check-in to protect all guests and maintain the quality of our property.
           </p>
         </div>
@@ -154,19 +162,26 @@ export default function SecurityDeposit() {
             return (
               <div
                 key={i}
-                className="group relative overflow-hidden rounded-2xl border border-blaze-orange/15 bg-gradient-to-br from-white via-ghost-white to-golden-pollen/20 p-6 text-center shadow-[0_14px_34px_rgba(51,51,51,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-blaze-orange/30 hover:shadow-[0_18px_42px_rgba(51,51,51,0.12)]"
+                className="border border-gray-100 hover:border-palace-gold transition-colors duration-300 p-6"
               >
-                <div className="mb-5 flex items-center justify-between">
-                  <span className="text-xs font-bold tracking-[0.18em] text-blaze-orange/70">
+                <div className="flex items-center justify-between mb-5">
+                  <span
+                    className="text-xs font-bold tracking-[0.18em] text-palace-gold"
+                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                  >
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <span className="ml-3 h-px flex-1 bg-gradient-to-r from-blaze-orange/20 to-transparent" />
+                  <span className="ml-3 h-px flex-1 bg-palace-gold/20" />
                 </div>
-                <div className="mx-auto mb-5 inline-flex h-16 w-16 items-center justify-center rounded-full border border-blaze-orange/20 bg-blaze-orange/10 shadow-inner shadow-white">
-                  <Icon className="w-8 h-8 text-blaze-orange" />
+                <div className="mb-5 w-12 h-12 border border-palace-navy/20 flex items-center justify-center">
+                  <Icon className="w-6 h-6 text-palace-navy" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-semibold text-dark-text mb-2 text-sm md:text-base">{h.title}</h3>
-                <p className="text-gray-500 text-xs leading-relaxed">{h.desc}</p>
+                <h3 className="font-semibold text-palace-navy mb-2 text-sm" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {h.title}
+                </h3>
+                <p className="text-gray-500 text-xs leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  {h.desc}
+                </p>
               </div>
             );
           })}
@@ -176,7 +191,8 @@ export default function SecurityDeposit() {
         <div className="text-center mb-6">
           <button
             onClick={() => setShowFull(!showFull)}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-blaze-orange px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blaze-orange/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blaze-orange/90 hover:shadow-xl hover:shadow-blaze-orange/30 focus:outline-none focus:ring-2 focus:ring-blaze-orange focus:ring-offset-2"
+            className="inline-flex items-center justify-center gap-2 border border-palace-navy text-palace-navy px-6 py-3 text-sm font-semibold tracking-widest uppercase hover:bg-palace-navy hover:text-palace-gold transition-colors duration-200 focus:outline-none"
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
             {showFull ? 'Hide Full Policy' : 'Read the Full Deposit Policy'}
             {showFull ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -185,11 +201,11 @@ export default function SecurityDeposit() {
 
         {/* Accordion */}
         {showFull && (
-          <div className="space-y-3">
+          <div className="space-y-2">
             {sections.map((section, i) => (
               <AccordionItem key={i} section={section} />
             ))}
-            <p className="text-xs text-gray-400 text-center pt-4">
+            <p className="text-xs text-gray-400 text-center pt-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               Last reviewed: 2025 · Grand Anse Beach Palace Hotel
             </p>
           </div>

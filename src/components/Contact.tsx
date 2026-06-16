@@ -15,9 +15,7 @@ export default function Contact() {
     try {
       const response = await fetch('https://formspree.io/f/meodnblb', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
@@ -28,124 +26,110 @@ export default function Contact() {
         alert('Oops! There was a problem sending your message. Please try again or call us directly.');
       }
     } catch {
-  alert('Oops! There was a problem sending your message. Please try again or call us directly.');
-}
-
+      alert('Oops! There was a problem sending your message. Please try again or call us directly.');
+    }
   };
 
+  const inputClass = 'w-full px-4 py-3 border border-gray-200 focus:border-palace-navy focus:outline-none transition-colors duration-200 text-palace-navy text-sm placeholder-gray-400';
+  const labelClass = 'block text-xs font-semibold tracking-widest uppercase text-palace-navy/60 mb-2';
+
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4">
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Get in <span className="text-[#2B59C3]">Touch</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Have questions? We&apos;re here to help plan your perfect Caribbean getaway.
+    <section id="contact" className="py-24 bg-white">
+      <div className="container mx-auto px-6">
+
+        {/* Header */}
+        <div className="mb-16">
+          <div className="section-rule" />
+          <h2 className="text-palace-navy mb-4">Get in Touch</h2>
+          <p className="text-gray-600 text-lg max-w-xl" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            Have questions? We're here to help plan your perfect Caribbean getaway.
           </p>
         </div>
 
         {/* Contact info + form */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-16 mb-20">
+
           {/* LEFT: Contact info */}
           <div>
-            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+            <div className="border border-gray-100 p-8 mb-8">
+              <h3 className="text-palace-navy mb-8" style={{ fontSize: '1.25rem' }}>Contact Information</h3>
 
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-[#2B59C3]/10 p-3 rounded-full">
-                    <MapPin className="w-6 h-6 text-[#2B59C3]" />
+              <div className="space-y-7">
+                {[
+                  { icon: MapPin, label: 'Address', lines: ['Grand Anse Beach, St. George\'s, Grenada'] },
+                  { icon: Phone, label: 'Phone', lines: ['+1 (473) 439-1412', 'Available 7am – 9pm EST'] },
+                  { icon: Mail, label: 'Email', lines: ['grandansepalace@gmail.com', 'We respond within 24 hours'] },
+                  { icon: Clock, label: 'Check-in / Check-out', lines: ['Check-in: 3:00 PM', 'Check-out: 11:00 AM'] },
+                ].map(({ icon: Icon, label, lines }) => (
+                  <div key={label} className="flex items-start gap-4">
+                    <div className="w-9 h-9 border border-palace-navy/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Icon className="w-4 h-4 text-palace-navy" strokeWidth={1.5} />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-palace-navy text-sm mb-1" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        {label}
+                      </p>
+                      {lines.map((line, i) => (
+                        <p key={i} className={`text-sm ${i === 0 ? 'text-gray-700' : 'text-gray-400'}`} style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                          {line}
+                        </p>
+                      ))}
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
-                    <p className="text-gray-600">Grand Anse Beach, St. George&apos;s, Grenada</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-[#29BF12]/10 p-3 rounded-full">
-                    <Phone className="w-6 h-6 text-[#29BF12]" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                    <p className="text-gray-600">+1 (473) 439-1412</p>
-                    <p className="text-sm text-gray-500">Available 7am - 9pm EST</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-[#F56416]/10 p-3 rounded-full">
-                    <Mail className="w-6 h-6 text-[#F56416]" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                    <p className="text-gray-600">grandansepalace@gmail.com</p>
-                    <p className="text-sm text-gray-500">We respond within 24 hours</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-[#FFD166]/10 p-3 rounded-full">
-                    <Clock className="w-6 h-6 text-[#F56416]" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Check-in / Check-out</h4>
-                    <p className="text-gray-600">Check-in: 3:00 PM</p>
-                    <p className="text-gray-600">Check-out: 11:00 AM</p>
-                  </div>
-                </div>
+                ))}
               </div>
 
               {/* Social */}
               <div className="mt-8 pt-8 border-t border-gray-100">
-                <h4 className="font-semibold text-gray-900 mb-4">Follow Us</h4>
-                <div className="flex space-x-4">
+                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-palace-navy/50 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  Follow Us
+                </p>
+                <div className="flex gap-3">
                   <a
                     href="https://www.facebook.com/grandansebeachpalace/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Grand Anse Beach Palace on Facebook"
-                    className="bg-[#2B59C3] p-3 rounded-full text-white hover:bg-[#29BF12] transition-colors"
+                    className="w-10 h-10 bg-palace-navy text-white flex items-center justify-center hover:bg-palace-gold hover:text-palace-navy transition-colors duration-200"
                   >
-                    <Facebook className="w-5 h-5" />
+                    <Facebook className="w-4 h-4" />
                   </a>
                   <a
                     href="https://www.instagram.com/grandansebeachpalace/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Grand Anse Beach Palace on Instagram"
-                    className="bg-[#F56416] p-3 rounded-full text-white hover:bg-[#29BF12] transition-colors"
+                    className="w-10 h-10 bg-palace-navy text-white flex items-center justify-center hover:bg-palace-gold hover:text-palace-navy transition-colors duration-200"
                   >
-                    <Instagram className="w-5 h-5" />
+                    <Instagram className="w-4 h-4" />
                   </a>
                 </div>
               </div>
-                            {/* Google Map */}
-              <div className="mt-8 rounded-xl overflow-hidden shadow-md">
-                <iframe
-                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.52!2d-61.7735!3d12.0075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x123ed4aad13d0de3!2sGrand%20Anse%20Beach%20Palace!5e0!3m2!1sen!2sus!4v1717100000000!5m2!1sen!2sus"
-                  width="100%"
-                  height="280"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Grand Anse Beach Palace Location"
-                />
-              </div>
+            </div>
+
+            {/* Google Map */}
+            <div className="overflow-hidden border border-gray-100">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.52!2d-61.7735!3d12.0075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x123ed4aad13d0de3!2sGrand%20Anse%20Beach%20Palace!5e0!3m2!1sen!2sus!4v1717100000000!5m2!1sen!2sus"
+                width="100%"
+                height="260"
+                style={{ border: 0, display: 'block' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Grand Anse Beach Palace Location"
+              />
             </div>
           </div>
 
           {/* RIGHT: Form */}
           <div>
-            <form id="send-message" onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+            <form id="send-message" onSubmit={handleSubmit} className="border border-gray-100 p-8">
+              <h3 className="text-palace-navy mb-8" style={{ fontSize: '1.25rem' }}>Send Us a Message</h3>
 
               <div className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="name" className={labelClass} style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     Your Name *
                   </label>
                   <input
@@ -155,12 +139,13 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#2B59C3] focus:outline-none transition-colors"
+                    className={inputClass}
+                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="email" className={labelClass} style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     Email Address *
                   </label>
                   <input
@@ -170,12 +155,13 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#2B59C3] focus:outline-none transition-colors"
+                    className={inputClass}
+                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="phone" className={labelClass} style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     Phone Number
                   </label>
                   <input
@@ -184,12 +170,13 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#2B59C3] focus:outline-none transition-colors"
+                    className={inputClass}
+                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="message" className={labelClass} style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                     Message *
                   </label>
                   <textarea
@@ -199,17 +186,19 @@ export default function Contact() {
                     rows={5}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#2B59C3] focus:outline-none transition-colors resize-none"
+                    className={`${inputClass} resize-none`}
                     placeholder="Tell us about your travel plans..."
+                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-[#F56416] text-white px-8 py-4 rounded-full font-bold hover:bg-[#29BF12] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center space-x-2"
+                  className="w-full bg-palace-navy text-palace-gold py-4 text-sm font-semibold tracking-widest uppercase hover:bg-palace-gold hover:text-palace-navy transition-colors duration-200 flex items-center justify-center gap-2"
+                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                 >
-                  <span>Send Message</span>
-                  <Send className="w-5 h-5" />
+                  Send Message
+                  <Send className="w-4 h-4" />
                 </button>
               </div>
             </form>
@@ -217,24 +206,34 @@ export default function Contact() {
         </div>
 
         {/* Booking banner */}
-        <div className="bg-gradient-to-br from-[#2B59C3] via-[#2B59C3] to-[#29BF12] rounded-2xl p-8 md:p-16 text-center text-white shadow-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Experience Paradise?</h2>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+        <div className="bg-palace-navy px-8 md:px-20 py-16 text-center text-white">
+          <h2
+            className="text-white mb-5"
+            style={{ fontFamily: '"Cormorant Garamond", Georgia, serif', fontWeight: 300 }}
+          >
+            Ready to Experience Paradise?
+          </h2>
+          <p className="text-white/70 text-base mb-10 max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
             Book your stay directly with us, come and relax. Enjoy the soothing rhythms of the sea and island life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={() => document.getElementById('send-message')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white text-[#2B59C3] px-10 py-4 rounded-full text-lg font-bold hover:bg-[#FFD166] hover:text-gray-900 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
+              className="bg-white text-palace-navy px-10 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-palace-gold hover:text-palace-navy transition-colors duration-200 min-w-[220px]"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
             >
               Check Availability
             </button>
-            <button className="bg-[#F56416] text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-[#F56416] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
-              Call Now: +1 (473) 439-1412
-            </button>
+            <a
+              href="tel:+14734391412"
+              className="border border-palace-gold text-palace-gold px-10 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-palace-gold hover:text-palace-navy transition-colors duration-200 min-w-[220px] text-center"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+            >
+              Call +1 (473) 439-1412
+            </a>
           </div>
-          <p className="mt-8 text-sm opacity-75">
-            Best Rate Guarantee • No Booking Fees • Instant Confirmation
+          <p className="mt-8 text-white/40 text-xs tracking-wide" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            Best Rate Guarantee &nbsp;&bull;&nbsp; No Booking Fees &nbsp;&bull;&nbsp; Instant Confirmation
           </p>
         </div>
       </div>

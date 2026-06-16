@@ -2,63 +2,82 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1C1C55] text-white mt-20">
-      
-      {/* Main Footer */}
-      <div className="container mx-auto px-6 py-12 grid gap-8 md:grid-cols-3">
+    <footer className="bg-palace-navy text-white">
 
-        {/* BRAND / LOGO */}
+      {/* Main Footer */}
+      <div className="container mx-auto px-6 py-14 grid gap-10 md:grid-cols-3">
+
+        {/* Brand */}
         <div>
-          <a href="#hero" className="flex items-center gap-2 mb-3">
+          <a
+            href="#hero"
+            className="flex items-center gap-3 mb-4"
+            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          >
             <img
-              src={`${import.meta.env.BASE_URL}media/logo.png`}
+              src={`${import.meta.env.BASE_URL}media/Logo.png`}
               alt="Grand Anse Beach Palace"
-              className="w-12 h-12 object-contain"
+              className="w-10 h-10 object-contain"
             />
-            <h2 className="text-xl font-semibold tracking-wide">
+            <span
+              className="text-lg font-medium text-white leading-tight"
+              style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
+            >
               Grand Anse Beach Palace Hotel
-            </h2>
+            </span>
           </a>
-          <p className="text-sm text-slate-300 leading-relaxed">
-            A family-run retreat on Grenada’s most iconic shoreline.
-            Spacious rooms, warm service, and the rhythm of the Caribbean—
+          <p className="text-sm text-white/50 leading-relaxed" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            A family-run retreat on Grenada's most iconic shoreline.
+            Spacious rooms, warm service, and the rhythm of the Caribbean —
             right outside your window.
           </p>
         </div>
 
-        {/* CONTACT */}
+        {/* Contact */}
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-widest text-[#FFCD72]">
+          <h3
+            className="text-xs font-semibold uppercase tracking-[0.2em] text-palace-gold mb-5"
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+          >
             Contact
           </h3>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-[#EE5622]" />
-              <span>Grand Anse Beach, St. George&apos;s, Grenada</span>
+          <ul className="space-y-3 text-sm" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <li className="flex items-start gap-3">
+              <MapPin className="w-4 h-4 text-palace-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+              <span className="text-white/60">Grand Anse Beach, St. George&apos;s, Grenada</span>
             </li>
-            <li className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-[#EE5622]" />
-              <span>+1 (473) 439-1412</span>
+            <li className="flex items-center gap-3">
+              <Phone className="w-4 h-4 text-palace-gold flex-shrink-0" strokeWidth={1.5} />
+              <a href="tel:+14734391412" className="text-white/60 hover:text-palace-gold transition-colors duration-200">
+                +1 (473) 439-1412
+              </a>
             </li>
-            <li className="flex items-center gap-2">
-              <Mail className="h-4 w-4 text-[#EE5622]" />
-              <span>grandansepalace@gmail.com</span>
+            <li className="flex items-center gap-3">
+              <Mail className="w-4 h-4 text-palace-gold flex-shrink-0" strokeWidth={1.5} />
+              <a href="mailto:grandansepalace@gmail.com" className="text-white/60 hover:text-palace-gold transition-colors duration-200">
+                grandansepalace@gmail.com
+              </a>
             </li>
           </ul>
         </div>
 
-        {/* BOOK DIRECT CTA */}
+        {/* Book Direct CTA */}
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-widest text-[#FFCD72]">
-            Book Direct & Save
+          <h3
+            className="text-xs font-semibold uppercase tracking-[0.2em] text-palace-gold mb-5"
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+          >
+            Book Direct &amp; Save
           </h3>
-          <p className="mt-4 text-sm text-slate-300 leading-relaxed">
+          <p className="text-sm text-white/50 leading-relaxed mb-5" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
             Booking directly helps us care for the property, create meaningful local jobs,
             and offer you our best rates.
           </p>
           <a
             href="#contact"
-            className="inline-block mt-4 bg-[#EE5622] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#FFCD72] transition-colors"
+            onClick={(e) => { e.preventDefault(); document.getElementById('send-message')?.scrollIntoView({ behavior: 'smooth' }); }}
+            className="inline-block border border-palace-gold text-palace-gold px-6 py-2.5 text-xs font-semibold tracking-widest uppercase hover:bg-palace-gold hover:text-palace-navy transition-colors duration-200"
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
             Contact Us
           </a>
@@ -66,9 +85,11 @@ export default function Footer() {
 
       </div>
 
-      {/* COPYRIGHT */}
-      <div className="border-t border-slate-800 py-4 text-center text-xs text-slate-400">
-        © {new Date().getFullYear()} Grand Anse Beach Palace Hotel. All rights reserved.
+      {/* Copyright */}
+      <div className="border-t border-white/10 py-5 text-center">
+        <p className="text-xs text-white/30" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+          &copy; {new Date().getFullYear()} Grand Anse Beach Palace Hotel. All rights reserved.
+        </p>
       </div>
     </footer>
   );
