@@ -1,102 +1,55 @@
-import { useRef, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+
+const MEDIA = [
+  { type: 'img', src: 'beach-bay.jpg',        dur: 6500, from: 'scale(1.06) translate(0,0)',        to: 'scale(1.16) translate(-2%,-1%)' },
+  { type: 'vid', src: 'clip-waves.mp4',        dur: 6500, from: 'scale(1.04)',                       to: 'scale(1.12)',  start: 1 },
+  { type: 'img', src: 'balcony-bistro.jpg',    dur: 5500, from: 'scale(1.05) translate(1.5%,1%)',    to: 'scale(1.15) translate(-1.5%,-1.5%)' },
+  { type: 'img', src: 'balcony-palms.jpg',     dur: 5500, from: 'scale(1.08) translate(-1.5%,1.5%)', to: 'scale(1.16) translate(1.5%,-1%)' },
+  { type: 'vid', src: 'clip-water.mp4',        dur: 6500, from: 'scale(1.04)',                       to: 'scale(1.12)',  start: 1 },
+  { type: 'img', src: 'kitchenette-sea.jpg',   dur: 5500, from: 'scale(1.05) translate(2%,0)',       to: 'scale(1.15) translate(-2%,-1%)' },
+  { type: 'img', src: 'balcony-chairs.jpg',    dur: 5500, from: 'scale(1.06) translate(0,1.5%)',     to: 'scale(1.16) translate(0,-1.5%)' },
+  { type: 'img', src: 'kitchen-door-sea.jpg',  dur: 5500, from: 'scale(1.05) translate(-2%,0)',      to: 'scale(1.15) translate(2%,-1%)' },
+];
+
+const BASE = `${import.meta.env.BASE_URL}media/hero-assets/`;
 
 export default function Hero() {
-    const [videoLoaded, setVideoLoaded] = useState(false);
-    const videoRef = useRef<HTMLVideoElement>(null);
+  const [current, setCurrent] = useState(0);
+  const [prev, setPrev]       = useState<number | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-    const isMobile =
-        typeof window !== 'undefined' &&
-        window.matchMedia('(max-width: 768px)').matches;
+  function advance(to: number) {
+    setPrev(current);
+    setCurrent(to);
+  }
 
-    const videoSrc = isMobile
-        ? `${import.meta.env.BASE_URL}media/hero-mobile.mp4`
-        : `${import.meta.env.BASE_URL}media/Hero.mp4`;
+  useEffect(() => {
+    const item = MEDIA[current];
+    timerRef.current = setTimeout(() => {
+      advance((current + 1) % MEDIA.length);
+    }, item.dur);
+    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
+  }, [current]);
 
-    return (
-        <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-            {/* Poster shown while video loads */}
-            <img
-                src={`${import.meta.env.BASE_URL}media/hero.jpg`}
-                alt=""
-                aria-hidden="true"
-                className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${videoLoaded ? 'opacity-0' : 'opacity-100'}`}
-            />
+  return (
+    <section className="relative w-full overflow-hidden" style={{ height: '100vh', minHeight: 560, background: '#0a3a44' }}>
 
-            {/* Video background */}
-            <video
-                ref={videoRef}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster={`${import.meta.env.BASE_URL}media/hero.jpg`}
-                src={videoSrc}
-                onCanPlay={() => setVideoLoaded(true)}
-                className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
-            />
+      {/* Slide layers */}
+      {MEDIA.map((item, i) => {
+        const isActive = i === current;
+        const isPrev   = i === prev;
+        if (!isActive && !isPrev) return null;
+        return (
+          <SlideLayer
+            key={`${i}-${isActive ? 'a' : 'p'}`}
+            item={item}
+            base={BASE}
+            visible={isActive}
+          />
+        );
+      })}
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/65" />
-
-            {/* Hero content */}
-            <div className="relative z-10 text-center px-6 max-w-4xl mx-auto animate-fade-in">
-                <p
-                    className="text-palace-gold text-sm font-medium tracking-[0.3em] uppercase mb-6"
-                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                >
-                    Grand Anse Beach &bull; Grenada
-                </p>
-
-                <h1
-                    className="text-white mb-6"
-                    style={{
-                        fontFamily: '"Cormorant Garamond", Georgia, serif',
-                        fontWeight: 300,
-                        letterSpacing: '0.04em',
-                        fontSize: 'clamp(3rem, 7vw, 6rem)',
-                        lineHeight: 1.1,
-                    }}
-                >
-                    Where the<br />
-                    <em style={{ color: '#FFCD72', fontStyle: 'italic' }}>Caribbean breathes</em>
-                </h1>
-
-                <p
-                    className="text-white/85 text-lg md:text-xl font-light max-w-2xl mx-auto mb-10 leading-relaxed"
-                    style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                >
-                    A family-run beachfront retreat on Grenada's most iconic shoreline.
-                    Steps from Grand Anse Beach — warm, unhurried, unforgettable.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <button
-                        onClick={() => document.getElementById('send-message')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="bg-palace-navy text-palace-gold px-10 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-palace-gold hover:text-palace-navy transition-colors duration-200 min-w-[200px]"
-                        style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                    >
-                        Book Your Stay
-                    </button>
-                    <button
-                        onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="border border-white/70 text-white px-10 py-4 text-sm font-semibold tracking-widest uppercase hover:border-palace-gold hover:text-palace-gold transition-colors duration-200 min-w-[200px]"
-                        style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-                    >
-                        Our Story
-                    </button>
-                </div>
-            </div>
-
-            {/* Scroll indicator */}
-            <button
-                onClick={() => document.getElementById('rooms')?.scrollIntoView({ behavior: 'smooth' })}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 hover:text-palace-gold transition-colors duration-200 z-10"
-                aria-label="Scroll to rooms"
-            >
-                <ChevronDown size={32} strokeWidth={1} className="animate-bounce" />
-            </button>
-        </section>
-    );
-}
+      {/* Scrim */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'linear-grad
