@@ -132,7 +132,7 @@ export default function Hero() {
       </div>
 
       {/* Dots */}
-      <div style={{ position: 'absolute', right: 'clamp(22px,5vw,64px)', bottom: 'clamp(48px,7vh,86px)', display: 'flex', gap: 9, zIndex: 3 }}>
+      <div className="hero-dots" style={{ position: 'absolute', right: 'clamp(22px,5vw,64px)', bottom: 'clamp(48px,7vh,86px)', display: 'flex', gap: 9, zIndex: 3 }}>
         {MEDIA.map((_, i) => (
           <button
             key={i}
@@ -153,15 +153,11 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div style={{ position: 'absolute', left: '50%', bottom: 22, transform: 'translateX(-50%)', zIndex: 3, color: 'rgba(255,255,255,0.8)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, animation: 'gabp-bob 2.4s ease-in-out infinite' }}>
+      <div className="hero-scroll" style={{ position: 'absolute', left: '50%', bottom: 22, transform: 'translateX(-50%)', zIndex: 3, color: 'rgba(255,255,255,0.8)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, animation: 'gabp-bob 2.4s ease-in-out infinite' }}>
         <span style={{ fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', fontWeight: 600 }}>Scroll</span>
         <span style={{ fontSize: 16 }}>↓</span>
       </div>
 
       <style>{`
         @keyframes gabp-bob { 0%,100%{transform:translate(-50%,0)} 50%{transform:translate(-50%,7px)} }
-        @media (prefers-reduced-motion:reduce){ .gabp-scroll{animation:none} }
-      `}</style>
-    </section>
-  );
-}
+        @media (prefers-reduced-motion:reduce){ .gabp-scroll{animation:n
