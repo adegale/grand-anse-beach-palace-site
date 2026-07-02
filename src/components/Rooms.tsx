@@ -121,7 +121,7 @@ export default function Rooms() {
           {rooms.map((room) => (
             <div
               key={room.id}
-              className="group bg-white border border-gray-100 hover:border-palace-gold transition-colors duration-300"
+              className="group bg-white border border-gray-100 hover:border-palace-gold transition-colors duration-300 min-w-0 overflow-hidden"
             >
               {/* Hero image */}
               <div className="relative h-64 overflow-hidden">
