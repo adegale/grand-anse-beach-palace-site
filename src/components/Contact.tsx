@@ -57,10 +57,10 @@ export default function Contact() {
               <div className="space-y-7">
                 {[
                   { icon: MapPin, label: 'Address', lines: ['Grand Anse Beach, St. George\'s, Grenada'] },
-                  { icon: Phone, label: 'Phone', lines: ['+1 (473) 439-1412', 'Available 7am – 9pm EST'] },
+                  { icon: Phone, label: 'Phone', lines: ['+1 (473) 439-1412', '+1 (473) 410-1412', 'Available 7am – 9pm EST'], primary: 2 },
                   { icon: Mail, label: 'Email', lines: ['grandansepalace@gmail.com', 'We respond within 24 hours'] },
                   { icon: Clock, label: 'Check-in / Check-out', lines: ['Check-in: 3:00 PM', 'Check-out: 11:00 AM'] },
-                ].map(({ icon: Icon, label, lines }) => (
+                ].map(({ icon: Icon, label, lines, primary }) => (
                   <div key={label} className="flex items-start gap-4">
                     <div className="w-9 h-9 border border-palace-navy/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Icon className="w-4 h-4 text-palace-navy" strokeWidth={1.5} />
@@ -70,7 +70,7 @@ export default function Contact() {
                         {label}
                       </p>
                       {lines.map((line, i) => (
-                        <p key={i} className={`text-sm ${i === 0 ? 'text-gray-700' : 'text-gray-400'}`} style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        <p key={i} className={`text-sm ${i < (primary ?? 1) ? 'text-gray-700' : 'text-gray-400'}`} style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
                           {line}
                         </p>
                       ))}
