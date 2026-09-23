@@ -46,11 +46,16 @@ export default function Footer() {
               <MapPin className="w-4 h-4 text-palace-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
               <span className="text-white/60">Grand Anse Beach, St. George&apos;s, Grenada</span>
             </li>
-            <li className="flex items-center gap-3">
-              <Phone className="w-4 h-4 text-palace-gold flex-shrink-0" strokeWidth={1.5} />
-              <a href="tel:+14734391412" className="text-white/60 hover:text-palace-gold transition-colors duration-200">
-                +1 (473) 439-1412
-              </a>
+            <li className="flex items-start gap-3">
+              <Phone className="w-4 h-4 text-palace-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+              <div className="flex flex-col gap-1">
+                <a href="tel:+14734391412" className="text-white/60 hover:text-palace-gold transition-colors duration-200">
+                  +1 (473) 439-1412
+                </a>
+                <a href="tel:+14734101412" className="text-white/60 hover:text-palace-gold transition-colors duration-200">
+                  +1 (473) 410-1412
+                </a>
+              </div>
             </li>
             <li className="flex items-center gap-3">
               <Mail className="w-4 h-4 text-palace-gold flex-shrink-0" strokeWidth={1.5} />
